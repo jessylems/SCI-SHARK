@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Configuración básica de la página -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Título que aparece en la pestaña del navegador -->
+<title>SCI SHARK</title>
+
+<style>
+/* Estilo general del cuerpo de la página */
+body{
+  margin:0; /* quita espacios por defecto */
+  font-family: Arial, sans-serif; /* tipo de letra */
+  background: linear-gradient(135deg,#5f768a,#00c6ff); /* fondo degradado */
+  color:rgb(74, 204, 208); /* color del texto */
+  text-align:center; /* centra el texto */
+}
+
+/* Caja que contiene el contenido principal */
+.container{
+  margin-top:80px; /* espacio arriba */
+}
+
+/* Título principal */
+h1{
+  font-size:40px;
+}
+
+/* Subtítulo */
+h2{
+  font-weight:normal;
+  margin-bottom:20px;
+}
+
+/* Botones (en realidad son enlaces) */
+a{
+  display:inline-block; /* permite tamaño tipo botón */
+  margin:5px;
+  padding:10px 15px;
+  background:#3e7794;
+  color:white;
+  text-decoration:none; /* quita el subrayado */
+  border-radius:8px; /* esquinas redondeadas */
+}
+
+/* Cambio de color cuando pasas el mouse */
+a:hover{
+  background:#4dc5cd;
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <h1> SCI SHARK</h1>
+    <h2>Ciencia como juego</h2>
+
+    <!-- Menú simple -->
+    <a href="#">Inicio</a>
+    <a href="#">Experimentos</a>
+    <a href="#">Juegos</a>
+    <a href="#">mis videos</a>
+    <a href="#">extras</a>
+  </div>
+  <aside>
+
+  </aside>
+<input type="button"
+</body>
+</html>
