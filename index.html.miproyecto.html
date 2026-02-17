@@ -1,86 +1,76 @@
 <!DOCTYPE html>
-<html lang="es"> <!-- Idioma principal del sitio -->
+<html lang="es">
 <head>
 
-<!-- Configuración básica que usan los navegadores -->
-<meta charset="UTF-8"> <!-- Permite tildes y ñ -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste para celulares -->
+    <!-- Configuración básica -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Archivo CSS externo (opcional, además del style interno) -->
-<link rel="stylesheet" href="css/estilos.css">
+    <!-- Título de la pestaña -->
+    <title>SCI SHARK | Plataforma Estudiantil</title>
 
-<!-- Título que aparece en la pestaña del navegador -->
-<title>SCI SHARK</title>
+    <!-- Conexión al CSS -->
+    <link rel="stylesheet" href="estilos.css">
 
-<style>
-/* ============================= */
-/* ESTILOS GENERALES DE LA WEB */
-/* ============================= */
-
-/* Cuerpo completo de la página */
-body{
-  margin:0; /* Quita los espacios que el navegador pone por defecto */
-  font-family: Arial, sans-serif; /* Tipo de letra */
-  background: linear-gradient(135deg,#419AB4,#3d8aa3); /* Fondo degradado */
-  color:rgb(255, 255, 255); /* Color del texto */
-  text-align:center; /* Centra el contenido */
-}
-
-/* Contenedor principal donde está todo */
-.container{
-  margin-top:80px; /* Espacio desde arriba */
-}
-
-/* Título grande */
-h1{
-  font-size:80px; /* Tamaño de letra enorme */
-}
-
-/* Subtítulo */
-h2{
-  font-weight:normal; /* Quita negritas */
-  margin-bottom:40px; /* Espacio abajo */
-}
-
-/* Los enlaces del menú que parecen botones */
-a{
-  display:inline-block; /* Permite tamaño tipo caja */
-  margin:5px; /* Espacio entre botones */
-  padding:10px 15px; /* Espacio interno */
-  background:#3e7794; /* Color del botón */
-  color:white; /* Color del texto */
-  text-decoration:none; /* Quita el subrayado */
-  border-radius:8px; /* Esquinas redondeadas */
-}
-
-/* Efecto cuando pasas el mouse */
-a:hover{
-  background:#4dc5cd; /* Cambia el color */
-}
-</style>
 </head>
-
 <body>
-<img src="c:\Users\lemus\OneDrive\Desktop\visual studio\sci.shark.jpg.PNG" alt="Logo de SCI SHARK" style="width:150px; margin-left:50px;"> <!-- Logo del proyecto -->
-  
-  <!-- CONTENIDO PRINCIPAL          -->
-  
-  <div class="container">
 
-    <!-- Nombre del proyecto -->
-    <h1>SCI SHARK</h1>
+    <!-- ======= ENCABEZADO ======= -->
+    <header class="navbar">
 
-    <!-- Frase secundaria -->
-    <h2>Ciencia como juego</h2>
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="sci.shark.jpg.PNG" alt="Logo SCI SHARK" class="logo">
+            <span class="logo-text">SCI SHARK</span>
+        </div>
 
-    <!-- Menú de navegación -->
-    <a href="#">Inicio</a>
-    <a href="#">Experimentos</a>
-    <a href="#">Juegos</a>
-    <a href="#">mis videos</a>
-    <a href="#">extras</a>
+        <!-- Menú -->
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Prácticas</a></li>
+                <li><a href="#">Equipo</a></li>
+            </ul>
+        </nav>
 
-  </div>
+    </header>
+
+
+    <!-- ======= SECCIÓN PRINCIPAL ======= -->
+    <section class="hero">
+
+        <h1>SCI SHARK </h1>
+        <h2>Plataforma estudiantil de ciencia</h2>
+        <p>
+            Un espacio para compartir prácticas, experimentos y proyectos escolares.
+        </p>
+
+        <!-- Botón -->
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+
+    </section>
+
+
+    <!-- ======= SECCIÓN INFORMATIVA ======= -->
+    <section class="info">
+
+        <div class="card">
+            <h3>🔬 Subir prácticas</h3>
+            <p>Publica tus experimentos y reportes escolares.</p>
+        </div>
+
+        <div class="card">
+            <h3>🧪 Ciencia clara</h3>
+            <p>Contenido organizado para facilitar el aprendizaje.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ======= PIE DE PÁGINA ======= -->
+    <footer>
+        <p>Proyecto escolar 2026 | SCI SHARK</p>
+    </footer>
 
 </body>
 </html>
