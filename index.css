@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.title{
+    font-size: 32px;
+    color: #003f5c;
+    text-align: center;
+    margin-top: 20px;
+}
+/* ===== CUERPO ===== */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#bbc7cf; /* Fondo claro estudiantil */
+    color:#1a1a1a;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    background-color:#2b657f; /* Azul institucional */
+    color:white;
+}
+
+.logo{
+    width:45px;
+}
+
+.logo-text{
+    font-weight:bold;
+    font-size:20px;
+    margin-left:10px;
+}
+
+.logo-container{
+    display:flex;
+    align-items:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* ===== HERO ===== */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+    color:#003f5c;
+}
+
+.hero h2{
+    margin:10px 0;
+    font-size:22px;
+    color:#005f73;
+}
+
+.hero p{
+    max-width:600px;
+    margin:15px auto;
+}
+
+/* ===== BOTÓN ===== */
+.btn-login{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    background-color:#005f73;
+    color:#A2B5AF;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn-login:hover{
+    background-color:#003f5c;
+}
+
+/* ===== TARJETAS ===== */
+.info{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:50px 10%;
+    flex-wrap:wrap;
+}
+.card{
+ background:#648bab;
+    padding:25px;
+    border-radius:10px;
+    width:250px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#003f5c;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:20px;
+    background-color:#003f5c;
+    color:white;
+    margin-top:40px;
+    /*=== aqui creo que en el borde superior derecho de la pagina se muestre la foto de perfil del usuario y al
+     momento de hacer click te mande a su cuenta con su informacion ===*/
+}
+.cuenta-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+.perfil-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #648bab;
+
+}
+.foto-perfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+
+}
+.nombre-usuario{
+    font-size: 16px;
+    font-weight: bold;
+}
+.perfil-link:hover .nombre-usuario{
+    text-decoration: underline;
+    padding: 5px;
+    background-color: #003f5c;
+    color: white;
+    border-radius: 8px;
+}
