@@ -1,0 +1,250 @@
+/* =====================================================
+   general :7 jij
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial;
+    background-color:#BBC7CF;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    background-color:#2B657F;
+    color:white;
+    padding:15px 20px;
+}
+
+
+
+/* =====================================================
+   LOGITO DEL TIBURON  (SCI SHARK)
+===================================================== */
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:40px;
+    transition:transform 0.3s ease;
+}
+
+.top-bar:hover .logo{
+    transform:scale(1.5);
+}
+
+.logo-text{
+    font-weight:bold;
+    font-size:22px;
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background-color:#2B657F;
+    color:white;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+.search{
+    text-align:center;
+    margin:30px 0;
+}
+
+.search input{
+    width:60%;
+    padding:12px;
+    border-radius:25px;
+    border:none;
+    font-size:14px;
+}
+
+
+
+/* =====================================================
+   CONTENEDOR (T_T)
+===================================================== */
+
+.container{
+    padding:20px;
+}
+
+
+
+/* =====================================================
+   GRID DE TARJETAS
+===================================================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    transition:transform 0.2s;
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+
+
+/* =====================================================
+   TAGS (Física, Química, Biología)
+===================================================== */
+
+.tags{
+    margin-bottom:10px;
+}
+
+.tag{
+    display:inline-block;
+    padding:5px 15px;
+    border-radius:15px;
+    font-size:12px;
+    color:white;
+    background:#2B657F;
+}
+
+
+
+/* =====================================================
+   PARTE DEL BOTÓN :V 
+===================================================== */
+
+
+.btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 10px;
+    background:#2c3e50;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:300px;
+}
+
+.btn:hover{
+    background:#34495e;
+}
+
+/* ========= PIEEEE DE PAGINA ======*/
+
+footer{
+    text-align:center;
+    padding:20px;
+    background-color:#003f5c;
+    color:white;
+    margin-top:500px;
+}
+/* ===== PAGINA DE TUTORIAL ===== */
+
+.tutorial{
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:#2B657F;
+    border-radius:15px;
+    text-align:center;
+}
+
+/*============== TITULITO ============== */
+
+.tutorial h1{
+    color:white;
+    margin-bottom:25px;
+}
+
+/* ================  VIDEITOOOO ================ */
+
+.video{
+    display:flex;
+    justify-content:center;
+    margin-bottom:16px;
+}
+
+.video iframe{
+    border-radius:30px;
+}
+
+/* ======== DESCRIPCION =======*/
+
+.descripcion{
+    background:#3b7b95;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:25px;
+}
+
+.descripcion h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+.descripcion p{
+    color:white;
+    line-height:2;
+}
+
+/* =========== BOTON VOLVER =======*/
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#2c3e50;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.btn:hover{
+    background:#34495e;
+}
