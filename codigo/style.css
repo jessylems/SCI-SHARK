@@ -99,7 +99,7 @@ header{
 ===================================================== */
 
 .container{
-    padding:20px;
+    padding: 20px;
 }
 
 
@@ -138,7 +138,7 @@ header{
 
 
 /* =====================================================
-   TAGS (Física, Química, Biología)
+   TAGS (Física, Química, Biología)ouuunou
 ===================================================== */
 
 .tags{
@@ -188,7 +188,8 @@ footer{
 /* ===== PAGINA DE TUTORIAL ===== */
 
 .tutorial{
-    max-width:900px;
+
+    max-width:1300px;
     margin:40px auto;
     padding:30px;
     background:#2B657F;
@@ -206,9 +207,9 @@ footer{
 /* ================  VIDEITOOOO ================ */
 
 .video{
-    display:flex;
-    justify-content:center;
-    margin-bottom:16px;
+  text-align: center;   
+  margin-top: 16px;
+
 }
 
 .video iframe{
@@ -217,12 +218,16 @@ footer{
 
 /* ======== DESCRIPCION =======*/
 
+/*acá es para separar la descripción y el espaciado del vídeo */
+
 .descripcion{
     background:#3b7b95;
     padding:20px;
     border-radius:10px;
     margin-bottom:25px;
+    margin-top: 15px;
 }
+
 
 .descripcion h2{
     color:white;
