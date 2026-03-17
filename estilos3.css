@@ -1,29 +1,246 @@
-
-input[type="file"] {
-    margin-top: 10px;
-    color: white;
+/* ===== RESET GENERAL ===== */
+/* esto quita los márgenes y espacios que los navegadores ponen por defecto */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-button {
-    background: #00d4ff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+/* ===== BODY ===== */
+/* aquí definí el estilo general de toda la página */
+body{
+    background-color:#A5B1B9; /* color de fondo principal */
+    font-family:Arial, Helvetica, sans-serif; /* tipografía sencilla y fácil de leer */
+    font-size:24px;
+    text-align:center;
+    color:antiquewhite;
+
+    /* uso flexbox para centrar todo el contenido en la página */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    /* esto hace que el body siempre ocupe toda la pantalla */
+    min-height:100vh;
 }
 
-button:hover {
-    background: #0099cc;
+/* ===== HEADER ===== */
+/* esta es la parte de arriba donde está el título y el menú */
+header{
+    background-color:#2b657f;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+    width:100%;
+    border-radius:10px;
+    font-size:40px;
+    letter-spacing:2px; /* separa un poco las letras */
 }
 
-footer {
-    background: #2b657f;
-    padding: 15px;
-    text-align: center;
-    
-
+/* título principal dentro del header */
+header h1{
+    font-size:45px;
+    margin:20px 0;
 }
-body {
+
+/* ===== TITULOS ===== */
+/* estilo general para los h1 */
+h1{
+    color:#ffffff;
+    text-align:center;
+    transition:transform 0.3s ease; /* pequeña animación */
+}
+
+/* cuando pasas el mouse por el título se agranda un poco */
+h1:hover{
+    transform:scale(1.1);
+}
+
+/* ===== CONTENEDOR DEL FORMULARIO ===== */
+/* esta caja contiene el formulario donde se suben los trabajos */
+.tenedor{
+    background:#2b657f;
+    width:350px;
+    margin:auto;
+    margin-top:60px;
+    padding:30px;
+    border-radius:30px;
+
+    /* sombra para que no se vea plano */
+    box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+
+    /* pequeño efecto de desenfoque en el fondo */
+    backdrop-filter:blur(10px);
+
+    transition:transform 0.3s ease;
+}
+
+/* cuando pasas el cursor la caja se agranda un poco */
+.tenedor:hover{
+    transform:scale(1.1);
+}
+
+/* ===== INPUTS ===== */
+/* estilo para los campos donde escribes el nombre o seleccionas archivos */
+input{
+    padding:6px 8px;
+    margin:6px;
+    font-size:14px;
+    border-radius:8px;
+    border:none;
+    width:100%;
+}
+
+/* ===== BOTONES ===== */
+/* estilo general de los botones */
+button{
+    background:#ffffff;
+    margin:10px;
+    padding:12px 20px;
+    border-radius:15px;
+    cursor:pointer;
+    border:none;
+
+    transition:transform 0.3s ease;
+}
+
+/* efecto cuando el cursor pasa por el botón */
+button:hover{
+    transform:scale(1.1);
+}
+
+/* ===== CAJA DONDE SE ESCRIBE EL NOMBRE DEL TRABAJO ===== */
+.textoboton{
+    background-color:#15323f;
+    border-radius:8px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+/* cambia de color cuando pasas el cursor */
+.textoboton:hover{
+    background-color:#5a6b7c;
+    color:white;
+    transform:scale(1.1);
+    transition:all 0.3s ease;
+}
+
+/* ===== CAJA PARA SELECCIONAR ARCHIVO ===== */
+/* esta es la parte donde aparece el archivo que se va a subir */
+.archivo{
+    background-color:#15323f;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    margin:20px auto;
+    width:100%;
+    cursor:pointer;
+
+    /* evita que el texto del archivo se salga */
+    word-wrap:break-word;
+}
+
+/* pequeño efecto visual al pasar el cursor */
+.archivo:hover{
+    background-color:#5a6b7c;
+    color:white;
+    transform:scale(1.1);
+    transition:all 0.3s ease;
+}
+
+/* ===== MENU ===== */
+/* estilo de los botones del menú de navegación */
+li{
+    list-style:none;
+    display:inline-block;
+    margin:0 15px;
+    padding:8px 15px;
+    background-color:#15323f;
+    border-radius:10px;
+    color:white;
+
+    transition:transform 0.3s ease;
+}
+
+/* animación del menú cuando pasas el mouse */
+li:hover{
+    transform:scale(1.1);
+}
+
+/* estilo de los enlaces del menú */
+nav a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ===== TEXTO INFORMATIVO ===== */
+/* esta caja contiene explicaciones o información de la página */
+.textoinformativo{
+    max-height:900px;
+    max-width: 900px;
+    margin:10px;
+    font-size:18px;
+    line-height:1.4;
+    text-align:center;
+    color:antiquewhite;
+
+    /* fondo semi transparente para que se vea más suave */
+    background-color:rgba(0,0,0,0.15);
+
+    padding:15px;
+    border-radius:15px;
+}
+
+/* ===== FOOTER ===== */
+/* parte final de la página */
+footer{
+    background:#2b657f;
+    color:white;
+    padding:20px;
+    text-align:center;
+    width:100%;
+}
+h3{
+    padding: 30px;
+    margin: auto;
     background-color: #2b657f;
+}
+/* ===== RESPONSIVE ===== */
+/* ajustes para cuando la página se ve en celular */
+@media (max-width:600px){
+
+    /* el texto se hace un poco más pequeño */
+    body{
+        font-size:18px;
+    }
+
+    /* el header ocupa menos espacio */
+    header{
+        font-size:28px;
+        padding:20px;
+    }
+
+    /* el título se reduce para que no se vea gigante */
+    header h1{
+        font-size:30px;
+    }
+
+    /* el formulario se adapta al ancho del celular */
+    .tenedor{
+        width:90%;
+        margin-top:30px;
+    }
+
+    /* el menú se acomoda en vertical */
+    li{
+        display:block;
+        margin:10px 0;
+    }
+
+}
+
+@media (max-widht: 1024px)
+{
+
 }

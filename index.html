@@ -1,97 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-    <!-- Configuración básica para que se acomode en dispositivos móviles -->
+    <!-- Configuración básica para caracteres y adaptación a celulares -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título de la pestaña -->
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>SCI SHARK | Plataforma Estudiantil</title>
 
-    <!-- Font Awesome para iconos -->
+    <!-- link a FW para iconos y emojis estilizados -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Conexión al CSS -->
+    <!-- conexión al archivo CSS donde está el diseño de la página -->
     <link rel="stylesheet" href="estilos.css">
 
 </head>
 
 <body>
 
-    <!-- ======= ENCABEZADO ======= -->
+    <!-- ======= BARRA SUPERIOR DE LA PAGINA ======= -->
     <header class="navbar">
 
-        <!-- Logo -->
+        <!-- sección donde aparece el logo de la página -->
         <div class="logo-container">
-            <img src="sci shark.jpeg" alt="Logo SCI SHARK" class="logo">
+            <img src="scishark.webp" alt="Logo de la mascota de Sci Shark" class="logo">
             <span class="logo-text">SCI SHARK</span>
         </div>
 
-        <!-- Menú de navegación -->
+        <!-- menú de navegación que lleva a otras secciones del sitio -->
         <nav>
-            <ul>
+            <ul class="links">
+
                 <li><a href="practicas.html">Prácticas</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
                 <li><a href="experimentos.html">Experimentos</a></li>
                 <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+
             </ul>
         </nav>
 
-        <!-- Cuenta de usuario -->
+        <!-- sección de cuenta del usuario donde aparecerá su foto y nombre -->
         <div class="cuenta-container">
-            <a href="cuenta.html" class="perfil-link">
-                <img src="perfil.jpg" alt="Foto de perfil" class="foto-perfil">
+            <a href="#" class="perfil-link">
+
+                <!-- imagen de perfil del usuario -->
+                <img src="perfil-default.png" alt="Foto de perfil del usuario" class="foto-perfil">
+
+                <!-- nombre del usuario -->
                 <span class="nombre-usuario">Nombre de usuario</span>
+
             </a>
         </div>
 
     </header>
 
-    <!-- ======= SECCIÓN PRINCIPAL ======= -->
-    <section class="hero">
 
-        <h1>SCI SHARK</h1>
-        <h2>Plataforma estudiantil de ciencia</h2>
+    <!-- ======= CONTENIDO PRINCIPAL DE LA PAGINA ======= -->
+    <main>
 
-        <p>
-            Un espacio para compartir prácticas, experimentos y proyectos escolares.
-        </p>
+        <!-- sección principal donde se explica la página -->
+        <section class="hero">
 
-        <!-- Botón de inicio de sesión -->
-        <a href="iniciodesesionh.html" class="btn-login">Iniciar sesión</a>
+            <h1>SCI SHARK</h1>
 
-    </section>
+            <h2>Página dedicada a la divulgación de la ciencia
+                donde podras aprender sobre la ciencia con videos,experimentos y un largo etc increible
+                no dudes en unirte a nuestra comunidad cientifica
+            </h2>
 
-    <!-- ======= SECCIÓN INFORMATIVA ======= -->
-    <section class="info">
+            <p>
+                Un espacio donde estudiantes pueden compartir su pasion por la ciencia y la quimica 
+                aqui podras subir tus trabajos y sugerencias para ayudar a otros estudiantes
+            </p>
 
-        <div class="card">
-            <h3><i class="fa-solid fa-flask"></i> Subir tus prácticas</h3>
-            <p>Publica tus experimentos y reportes escolares.</p>
-        </div>
+            <!-- botón que lleva al sistema de registro o inicio de sesión -->
+            <a href="iniciodesesion.html" class="btn-login">Iniciar sesión</a>
 
-        <div class="card">
-            <h3><i class="fa-solid fa-microscope"></i> Ciencia clara</h3>
-            <p>Contenido organizado para facilitar el aprendizaje.</p>
-        </div>
+        </section>
 
-        <div class="card">
-            <h3><i class="fa-solid fa-users"></i> Comunidad</h3>
-            <p>Conecta con otros estudiantes y comparte tus ideas.</p>
-        </div>
 
-        <div class="card">
-            <h3><i class="fa-solid fa-book-skull"></i> Recursos</h3>
-            <p>Accede a guías, tutoriales y materiales de apoyo.</p>
-        </div>
+        <!-- sección de información con tarjetas -->
+        <section class="info">
 
-    </section>
+            <!-- tarjeta 1 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-flask"></i> Subir tus prácticas</h3>
+                <p>Publica tus experimentos, reportes y prácticas escolares.</p>
+            </div>
+
+            <!-- tarjeta 2 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-microscope"></i> Ciencia clara</h3>
+                <p>Contenido científico organizado, claro y fácil de entender.</p>
+            </div>
+
+            <!-- tarjeta 3 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-users"></i> Comunidad</h3>
+                <p>Conecta con estudiantes y docentes interesados en la ciencia.</p>
+            </div>
+
+            <!-- tarjeta 4 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-book-skull"></i> Recursos</h3>
+                <p>Accede a guías, tutoriales y materiales de apoyo académico.</p>
+            </div>
+
+        </section>
+
+    </main>
+
 
     <!-- ======= PIE DE PÁGINA ======= -->
     <footer>
-        <p>Proyecto científico 2026 / SCI SHARK</p>
+
+        <p>Proyecto científico escolar — Sci Shark 2026</p>
+
     </footer>
 
 </body>
+
 </html>
