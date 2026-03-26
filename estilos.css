@@ -1,22 +1,29 @@
 /* ===== RESET GENERAL ===== */
+/* elimina margenes del navegador y mejora el modelo de caja */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+
+/* ===== TITULOS GENERALES ===== */
 .title{
-    font-size: 32px;
-    color: #003f5c;
-    text-align: center;
-    margin-top: 20px;
+    font-size:32px;
+    color:#003f5c;
+    text-align:center;
+    margin-top:20px;
 }
-/* ===== CUERPO ===== */
+
+
+/* ===== CUERPO DE LA PAGINA ===== */
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#bbc7cf; /* Fondo claro estudiantil */
+   background-image: url(fondo-perron);
     color:#1a1a1a;
+    line-height:1.6;
 }
+
 
 /* ===== NAVBAR ===== */
 .navbar{
@@ -24,10 +31,12 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:15px 10%;
-    background-color:#2b657f; /* Azul institucional */
+    background-color:#2b657f; /* azul institucional */
     color:white;
 }
 
+
+/* ===== LOGO ===== */
 .logo{
     width:45px;
 }
@@ -43,6 +52,8 @@ body{
     align-items:center;
 }
 
+
+/* ===== MENU DE NAVEGACION ===== */
 nav ul{
     list-style:none;
     display:flex;
@@ -53,13 +64,15 @@ nav a{
     text-decoration:none;
     color:white;
     font-weight:bold;
+    transition:0.3s;
 }
 
 nav a:hover{
     text-decoration:underline;
 }
 
-/* ===== HERO ===== */
+
+/* ===== HERO (TEXTO PRINCIPAL) ===== */
 .hero{
     text-align:center;
     padding:80px 20px;
@@ -81,7 +94,8 @@ nav a:hover{
     margin:15px auto;
 }
 
-/* ===== BOTÓN ===== */
+
+/* ===== BOTON DE INICIO DE SESION ===== */
 .btn-login{
     display:inline-block;
     margin-top:20px;
@@ -91,13 +105,16 @@ nav a:hover{
     text-decoration:none;
     border-radius:8px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .btn-login:hover{
     background-color:#003f5c;
+    transform:scale(1.05);
 }
 
-/* ===== TARJETAS ===== */
+
+/* ===== SECCION DE TARJETAS ===== */
 .info{
     display:flex;
     justify-content:center;
@@ -105,19 +122,28 @@ nav a:hover{
     padding:50px 10%;
     flex-wrap:wrap;
 }
+
+
+/* ===== TARJETAS ===== */
 .card{
- background:#648bab;
+    background:#648bab;
     padding:25px;
     border-radius:10px;
     width:250px;
     text-align:center;
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h3{
     margin-bottom:10px;
     color:#003f5c;
 }
+
 
 /* ===== FOOTER ===== */
 footer{
@@ -126,38 +152,66 @@ footer{
     background-color:#003f5c;
     color:white;
     margin-top:40px;
-    /*=== aqui creo que en el borde superior derecho de la pagina se muestre la foto de perfil del usuario y al
-     momento de hacer click te mande a su cuenta con su informacion ===*/
 }
-.cuenta-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
 
-}
-.perfil-link{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #648bab;
+/* AJUSTES PARA DIFERENTES TAMAÑOS DE PANTALLA */
 
-}
-.foto-perfil{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
+/* Pantallas muy pequeñas (celulares compactos) */
+@media (max-width:480px){
+  body {
+    font-size:16px;
+  }
 
+  nav li {
+    display:block;
+    margin:10px 0;
+  }
 }
-.nombre-usuario{
-    font-size: 16px;
-    font-weight: bold;
+
+/* Celulares normales */
+@media (max-width:600px){
+  h1 {
+    font-size:22px;
+  }
+
+  form, section, article {
+    width:90%;
+    margin:auto;
+  }
 }
-.perfil-link:hover .nombre-usuario{
-    text-decoration: underline;
-    padding: 5px;
-    background-color: #003f5c;
-    color: white;
-    border-radius: 8px;
+
+/* Tablets */
+@media (max-width:768px){
+  .info {
+    flex-direction:column;
+    align-items:center;
+  }
+
+  section, article {
+    width:80%;
+    margin:auto;
+  }
+}
+
+/* Tablets grandes */
+@media (max-width:900px){
+  form, section, article {
+    width:70%;
+    margin:auto;
+  }
+}
+
+/* Laptops */
+@media (max-width:1024px){
+  body {
+    font-size:20px;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width:1200px){
+  main {
+    max-width:1200px;
+    margin:auto;
+  }
 }
