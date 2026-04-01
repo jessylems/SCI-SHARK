@@ -1,6 +1,24 @@
-@font-face {
-  font-family: 'Smile Delight';
-  src: url('ruta/al/archivo/SmileDelight.ttf') format('truetype');
+:root {
+  /* Colores principales  */
+  --color-fondo-wrapper: #c8ecff58;;
+  --color-borde-wrapper: #076cba37;
+  --color-borde-input: #0038989c;
+  --color-boton: #326eaae7;
+  --color-texto-boton: #ffffff;
+
+  /* Tamaños y medidas */
+  --radio-borde-wrapper: 10px;
+  --radio-borde-input: 40px;
+  --radio-borde-boton: 6px;
+  --padding-wrapper: 30px 40px;
+  --altura-input: 50px;
+  --altura-boton: 40px;
+
+  /* Tipografía */
+  --font-size-titulo: 36px;
+  --font-size-input: 16px;
+  --font-size-boton: 16px;
+  --font-color: #162740;
 }
 
 * {
@@ -9,56 +27,189 @@
   box-sizing: border-box;
 }
 
+/*==estilos del cuelpo==*/
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url(descarga.webp);
+  background-image: url(chark.webp);
   background-size: cover;
   background-position: center;
 }
-
+ /* imagen oculta para que funcione el alt */
+.fondo {
+  display: none; 
+}
+/*estilo del formulario*/
 .wrapper {
   width: 420px;
-  background-color: #d9eefc;
-  border: 2px solid #074a7e;
-  border-radius: 10px;
-  padding: 30px 40px;
+  background-color: var(--color-fondo-wrapper);
+  border: 2px solid var(--color-borde-wrapper);
+  border-radius: var(--radio-borde-wrapper);
+  padding: var(--padding-wrapper);
 }
 
+/*titulo del formulario*/
 .wrapper h1 {
-  font-size: 36px;
+  font-size: var(--font-size-titulo);
   text-align: center;
+
 }
 
+/*estilo de las cajas para introducir la informacion*/
 .wrapper .input-box {
   width: 100%;
-  height: 50px;
+  height: 30px;
   position: relative;
   margin: 30px 0;
 }
 
+/*estiliza la caja donde vas a poner la info*/
 .input-box input {
   width: 100%;
-  height: 50px;
+  height: var(--altura-input);
   background: transparent;
   border: none;
   outline: none;
-  border: 2px solid #3d8aaa;
-  border-radius: 40px;
-  font-size: 16px;
+  border: 2px solid var(--color-borde-input);
+  border-radius: var(--radio-borde-input);
+  font-size: var(--font-size-input);
   padding: 0 20px;
 }
 
+/*estiliza el boton para enviar el formulario del formulario*/
 button {
   width: 100%;
-  height: 40px;
-  background: #0972c2;
-  color: white;
+  height: var(--altura-boton);
+  background: var(--color-boton);
+  color: var(--color-texto-boton);
   border: none;
-  border-radius: 40px;
-  font-size: 16px;
+  border-radius: var(--radio-borde-input);
+  font-size: var(--font-size-boton);
   cursor: pointer;
   margin-top: 20px;
 }
+
+/*estiliz ael boton para confirmar el formulario*/
+.btn {
+  background-color: var(--color-boton);
+  color: var(--color-texto-boton);
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--radio-borde-boton);
+  font-size: var(--font-size-boton);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto de transicion del color en el botón */
+.btn:hover {
+  background-color: var(--color-borde-input);
+}
+
+/* Transiciones para todos los botones  */
+input, button {
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* transicion de agrandar los botones cuando pasas el cursor  */
+input:hover, button:hover {
+  transform: scale(1.05);
+}
+
+
+
+/*media para adaptar a dispositivos*/
+/* AJUSTES PARA DIFERENTES TAMAÑOS DE PANTALLA       */
+/* en celulares, tablets y computadoras
+
+/* aquí se acomodan las cosas para pantallas muy pequeñas */
+@media (max-width:480px){
+
+/* reducimos un poco el tamaño del texto */
+body{
+font-size:16px;
+}
+
+/* el menú se acomoda en vertical para que no se amontone */
+nav li{
+display:block;
+margin:10px 0;
+}
+
+}
+
+
+/* CELULARES NORMALES 
+ la mayoría de teléfonos entran en este tamaño */
+@media (max-width:600px){
+
+/* el título se hace más pequeño para que no ocupe toda la pantalla */
+h1{
+font-size:22px;
+}
+
+/* las cajas o formularios ocupan casi todo el ancho */
+.tenedor{
+width:90%;
+}
+
+.card{
+width:90%;
+}
+
+}
+
+
+/* TABLETS 
+aquí la pantalla ya es más grande pero aún no es computadora */
+@media (max-width:768px){
+
+/* si hay tarjetas o secciones con flexbox se acomodan una debajo de otra */
+.info{
+flex-direction:column;
+align-items:center;
+}
+
+/* hacemos las tarjetas más anchas para aprovechar el espacio */
+.card{
+width:80%;
+}
+
+}
+
+
+/*  TABLETS GRANDES 
+algunos iPads o tablets horizontales entran aquí */
+@media (max-width:900px){
+
+/* el formulario o contenedor principal se adapta */
+.tenedor{
+width:70%;
+}
+
+}
+
+
+/*  LAPTOPS 
+pequeños ajustes cuando la pantalla es de laptop */
+@media (max-width:1024px){
+
+/* bajamos un poco el tamaño del texto general */
+body{
+font-size:20px;
+}
+
+}
+/*  PANTALLAS GRANDES  
+ cuando la pantalla es muy grande centramos el contenido */
+@media (min-width:1200px){
+
+/* esto evita que el contenido quede demasiado estirado */
+main{
+max-width:1200px;
+margin:auto;
+}
+}
+
