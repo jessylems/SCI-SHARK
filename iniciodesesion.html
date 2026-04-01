@@ -1,37 +1,52 @@
 <!DOCTYPE html>
+<!--habilita caracteres especiales del español-->
 <html lang="es">
-  <head>
+<head>
+    <!--encabezado-->
     <meta charset="UTF-8">
-    <meta name="viewpor" content="width=device-width, initial-scale=1.0">
-    <title> INICIO DE SESION </title>
-    <link rel="stylesheet" href="iniciodesesion.css">
-  </head>
+    <!-- acomoda el contenido en distintos dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--titulo del la pestaña -->
+            <title>Iniciar Sesión </title>
+    <link rel="stylesheet" href="iniciodesesionese.css">
+</head>
+<!-- contenido de la pagina-->
 <body>
 
-</body>
+    <img src="chark.webp" alt="fondo acuatico azul marino con olas que se pueden observar en la parte de arriba y reflejos que indican que la luz entra a traves del agua" class="fondo">
 
-
-<body> 
-    <div class="wrapper">
+    <main class="wrapper">
+        <!-- formulario de inicio de sesion -->
         <form action="">
-            <hl>iniciar sesion</hl>
-            <div class="input-box">
-                <input type="text" placeholder="Username" required>
-                <i class='input-box'>
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">¿recordarme?</label>
-                    <a href="#"> ¿olvidaste tu contraseña?</a>
-                </div>
-                <button type="submit" class="btn">iniciar sesion</button>
-                <div class="register link">
-                    <p> ¿no tienes una cuenta? <a href="#"> Registrate</a></p>
-                </div>
+            <header>
+                <!-- titulo del apartado donde se encuentra el formulario -->
+                <h1>¡Bienvenido de Nuevo!</h1>
+            </header>
+            <!-- apartado para introducir el nombre de usuario-->
+            <section class="input-box">
+                <input type="text" placeholder="usuario" required>
+            </section>
+            <!-- caja para introducir la contraseña -->
+            <section class="input-box">
+                <input type="password" placeholder="contraseña" required>
+            </section>
+            <!-- boton para fuardar la contraseña-->
+            <section class="recorda">
+                <label>
+                    <input type="checkbox" class="verificar">
+                    ¿Recordarme?
+                </label>
+                <!-- opcion para enviar un mail si olvidaste la contraseña -->
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </section>
+            <!-- boton para enviar el formulario-->
+            <button type="submit" class="btn">Iniciar sesión</button>
+            <section class="registra">
+                <!-- te redirije a la pagina de registro por si no tienes una cuenta crearla -->
+                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+            </section>
         </form>
-    </div>
+        
+    </main>
 </body>
 </html>
-
-
