@@ -31,12 +31,20 @@ body {
     font-weight: normal;
     letter-spacing: 0.7px; 
     background-image: url("fondo_scishark.webp");
-    background-size: 100%; 
+    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
     background-position: center; 
     background-repeat: no-repeat;
     background-attachment: fixed; 
     color:#1a1a1a;
     transition: background-color 0.4s, color 0.4s;
+}
+
+/* celular */
+@media (max-width: 768px) {
+    body {
+        background-size: cover;   /* Mantiene la imagen adaptada */
+        background-attachment: scroll; /* Evita problemas en móviles con fixed */
+    }
 }
 
 /* Barra de navegación */
@@ -218,4 +226,43 @@ body:has(#modo-check:checked) .btn-login {
 
 body:has(#modo-check:checked) .card {
     background: #1d466799;
+}
+
+/* tablets y celuuus */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 60px; /* más pequeño en tablet */
+    }
+    .hero h2 {
+        font-size: 28px;
+    }
+    .title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 42px; /* más pequeño en celuuu */
+    }
+    .hero h2 {
+        font-size: 22px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .title {
+        font-size: 32px;
+    }
+    .info {
+        flex-direction: column; /* no amontonar*/
+        align-items: center;
+    }
+    .card {
+        width: 90%; /* celular tamaño kiii*/
+    }
+    nav ul {
+        flex-direction: column; /* para el menúppp */
+        gap: 10px;
+    }
 }
