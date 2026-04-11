@@ -3,6 +3,15 @@
     src: url('coolvetica.otf') format('opentype');
 }
 
+:root {
+    --color-primario: #073d67ed; 
+    --color-secundario: #154b62ec;
+    --color-terciario: #15344df0;
+    --color-clarito: #055c9e8b;
+    --color-texto: #f5f9fcf0;
+    --color--oscuro:#0f273af0;
+}
+
 *{
     margin:0;
     padding:0;
@@ -10,32 +19,34 @@
 }
 
 .title{
-    font-size: 38px;
-    color: #0B3C5D;
+    font-size: 58px;
+    color:var(--color-primario);
     text-align: center;
     margin-top: 20px;
 }
-/* ===== CUERPO ===== */
-body{
-    font-family: 'coolvetica' ;
+
+/* Configuración del cuerpo */
+body {
+    font-family: 'coolvetica';
     font-weight: normal;
-     letter-spacing: 0.7px; 
+    letter-spacing: 0.7px; 
     background-image: url("fondo_scishark.webp");
-    background-size: cover; 
+    background-size: 100%; 
     background-position: center; 
     background-repeat: no-repeat;
     background-attachment: fixed; 
     color:#1a1a1a;
+    transition: background-color 0.4s, color 0.4s;
 }
 
-/* ===== NAVBAR ===== */
-.navbar{
+/* Barra de navegación */
+.navbar {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 10%;
-    background: rgba(11, 60, 93, 0.416); 
-    backdrop-filter: blur(15px); 
+    font-size: 19px;
+    background: #097aaa5a;  
     color:#F5F9FC;
 }
 
@@ -49,147 +60,162 @@ body{
     transform: scale(1.3);
 }
 
-.logo-text{
+.logo-text {
     font-weight:normal;
     font-size:20px;
     margin-left:10px;
 }
 
-.logo-container{
+.logo-container {
     display:flex;
     align-items:center;
 }
 
-nav ul{
+nav ul {
     list-style:none;
     display:flex;
     gap:20px;
 }
 
-nav a{
+nav a {
     text-decoration:none;
     color:white;
-    font-weight:normal;
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration:underline;
 }
 
-/* ===== HERO ===== */
-.hero{
+/* Sección Hero */
+.hero {
     text-align:center;
-    padding:80px 20px;
+    padding:45px 20px;
 }
 
-.hero h1{
-    font-size:58px;
-    color:#083d56;
+.hero h1 {
+    font-size:89px;
+    color:var(--color-texto);
 }
 
-.hero h2{
-    margin:10px 0;
-    font-size:28px;
-    color:#014c6f;
+.hero h2 {
+    margin:14px 0;
+    font-size:36px;
+    color:var(--color-terciario);
 }
 
-.hero p{
+.hero p {
     max-width:600px;
-    margin:15px auto;
+    font-size: 20px;
+    margin:16px auto;
+    color: var(--color-primario);
 }
 
-/* ===== BOTÓN ===== */
-.btn-login{
+/* Botones */
+.btn-login {
     display:inline-block;
     margin-top:20px;
     padding:12px 30px;
-    background-color:rgb(11, 60, 93);
-    color:#A2B5AF;
+    background-color:var(--color-secundario);
+    color:#f4f6f5;
     text-decoration:none;
     border-radius:8px;
-    font-weight:normal;
+    width: 170px;
+    height: 50px;
+    transition: 0.2s;
 }
 
-.btn-login:hover{
-    background-color:#003f5c;
+.btn-login:hover {
+    transform: translateY(-5px);
 }
 
-/* ===== TARJETAS ===== */
-.info{
+/* Tarjetas de información */
+.info {
     display:flex;
     justify-content:center;
     gap:30px;
     padding:50px 10%;
     flex-wrap:wrap;
 }
-.card{
- background:#3582c1c7;
+
+.card {
+    background:var(--color-clarito);
     padding:25px;
     border-radius:10px;
     width:250px;
     text-align:center;
     box-shadow:0 6px 13px rgba(20, 20, 20, 0.521);
-}
-
-.card h3{
-    margin-bottom:10px;
-    color:#003f5c;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    text-align:center;
-    padding:20px;
-    background-color:#003f5c;
-    color:white;
-    margin-top:40px;
-    /*=== aqui creo que en el borde superior derecho de la pagina se muestre la foto de perfil del usuario y al
-     momento de hacer click te mande a su cuenta con su informacion ===*/
-}
-.cuenta-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-}
-.perfil-link{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #648bab;
-
-}
-.foto-perfil{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
-
-}
-.nombre-usuario{
-    font-size: 16px;
-    font-weight: normal;
-}
-.perfil-link:hover .nombre-usuario{
-    text-decoration: underline;
-    padding: 5px;
-    background-color: #003f5c;
-    color: white;
-    border-radius: 8px;
-}
-
-.card {
     transition: 0.3s;
+}
+
+.card h3 {
+    margin-bottom:10px;
+    color:var(--color--oscuro);
+    font-size: 22px;
 }
 
 .card:hover {
     transform: translateY(-10px);
 }
 
-.btn-login {
-    transition: 0.2s;
+/* Pie de página */
+footer {
+    text-align:center;
+    padding:20px;
+    background-color:var(--color-primario);
+    color:white;
+    margin-top: 10px; 
 }
-.btn-login:hover {
-    transform: translateY(-5px);
+
+.cuenta-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Funcionalidad modo oscuro CSS */
+#modo-check {
+    display: none;
+}
+
+/* Botón activador de modo oscuro */
+.btn-toggle {
+    display: block;
+    margin: 40px 0 10px 10%; 
+    padding: 10px 20px;
+    background-color: var(--color--oscuro);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.btn-toggle:hover {
+    background-color: var(--color-secundario);
+}
+
+/* Cambiar colores a modo oscuro */
+body:has(#modo-check:checked) {
+    background-color: #2f5e91;
+    background-image:url(fondo_scishark.webp);
+    color: white;
+}
+
+/* Aplicar color negro al texto :v */
+body:has(#modo-check:checked) .hero h1,
+body:has(#modo-check:checked) .hero h2,
+body:has(#modo-check:checked) .hero p,
+body:has(#modo-check:checked) .card p,
+body:has(#modo-check:checked) .card h3,
+body:has(#modo-check:checked) .navbar,
+body:has(#modo-check:checked) .navbar nav a, 
+body:has(#modo-check:checked) .logo-text,   
+body:has(#modo-check:checked) .card,
+body:has(#modo-check:checked) .btn-login {
+    color: rgba(15, 4, 4, 0.874) !important; 
+}
+    
+
+body:has(#modo-check:checked) .card {
+    background: #1d466799;
 }
