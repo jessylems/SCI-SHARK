@@ -1,12 +1,12 @@
 :root {
-  /* Colores principales  */
-  --color-fondo-wrapper: #c8ecff58;;
-  --color-borde-wrapper: #076cba37;
-  --color-borde-input: #0038989c;
-  --color-boton: #326eaae7;
-  --color-texto-boton: #ffffff;
+  --color-fondo-wrapper: #d3f5ffad;
+  --color-borde-wrapper: #a4e7ff6b;
+  --color-borde-input: #0072989c;
+  --color-boton: #328aaae7;
+  --color-texto-boton: #34a2c650;
+  --color-font:#166f8a;
+  --color-font-dos: #ffffff;
 
-  /* Tamaños y medidas */
   --radio-borde-wrapper: 10px;
   --radio-borde-input: 40px;
   --radio-borde-boton: 6px;
@@ -14,11 +14,10 @@
   --altura-input: 50px;
   --altura-boton: 40px;
 
-  /* Tipografía */
-  --font-size-titulo: 36px;
+  --font-size-titulo: 30px;
   --font-size-input: 16px;
   --font-size-boton: 16px;
-  --font-color: #162740;
+  --font-size-fecha: 14px;
 }
 
 * {
@@ -27,98 +26,131 @@
   box-sizing: border-box;
 }
 
-/*==estilos del cuelpo==*/
-body {
+h1{
+color: var(--color-font);
+}
+/* cuerpo estático */
+html, body {
+  height: 100%;
+  overflow: hidden; /* evita scroll */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-image: url(chark.webp);
+  background-image: url(CHICHARK.webp);
   background-size: cover;
   background-position: center;
 }
- /* imagen oculta para que funcione el alt */
+
 .fondo {
-  display: none; 
+  display: none;
 }
-/*estilo del formulario*/
+
+/* contenedor fijo */
 .wrapper {
   width: 420px;
+  height: auto;
   background-color: var(--color-fondo-wrapper);
   border: 2px solid var(--color-borde-wrapper);
   border-radius: var(--radio-borde-wrapper);
   padding: var(--padding-wrapper);
+  position: relative; 
 }
 
-/*titulo del formulario*/
+/* títulos */
 .wrapper h1 {
   font-size: var(--font-size-titulo);
   text-align: center;
-
 }
 
-/*estilo de las cajas para introducir la informacion*/
+/* inputs */
 .wrapper .input-box {
   width: 100%;
-  height: 30px;
-  position: relative;
-  margin: 30px 0;
+  margin: 20px 0;
 }
-
-/*estiliza la caja donde vas a poner la info*/
 .input-box input {
   width: 100%;
   height: var(--altura-input);
-  background: transparent;
-  border: none;
-  outline: none;
   border: 2px solid var(--color-borde-input);
   border-radius: var(--radio-borde-input);
   font-size: var(--font-size-input);
   padding: 0 20px;
+  background: transparent;
+  outline: none;
+  color: var(--color-font);
 }
-
-/*estiliza el boton para enviar el formulario del formulario*/
-button {
+.input-box input::placeholder {
+  color: var(--color-font);
+}
+/* botones */
+button, .btn {
   width: 100%;
   height: var(--altura-boton);
   background: var(--color-boton);
-  color: var(--color-texto-boton);
-  border: none;
-  border-radius: var(--radio-borde-input);
-  font-size: var(--font-size-boton);
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-/*estiliz ael boton para confirmar el formulario*/
-.btn {
-  background-color: var(--color-boton);
-  color: var(--color-texto-boton);
-  padding: 12px 20px;
+  color: var(--color-font-dos);
   border: none;
   border-radius: var(--radio-borde-boton);
   font-size: var(--font-size-boton);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Efecto de transicion del color en el botón */
 .btn:hover {
   background-color: var(--color-borde-input);
-}
-
-/* Transiciones para todos los botones  */
-input, button {
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* transicion de agrandar los botones cuando pasas el cursor  */
-input:hover, button:hover {
   transform: scale(1.05);
 }
 
+/* fecha */
+.campo-fecha {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
+.campo-fecha label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--color-font);
+}
+
+.campo-fecha input[type="date"] {
+  padding: 10px;
+  border: 1px solid var(--color-borde-input);
+  background-color: var(--color-fondo-wrapper);
+  border-radius: var(--radio-borde-boton);
+  font-size: var(--font-size-fecha);
+}
+
+/* transición fade entre formularios */
+form {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+form.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+/* Efectos de transiciones  */
+.btn:hover {
+  background-color: var(--color-borde-input);
+  transform: scale(1.05); 
+}
+/* Transiciones para los botones donde pueden poner informcion */
+input, button, .campo-fecha input[type="date"] {
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* transiciones de los botones de la fecha */
+input:hover, button:hover, .campo-fecha input[type="date"]:hover {
+  transform: scale(1.05);
+}
 
 /*media para adaptar a dispositivos*/
 /* AJUSTES PARA DIFERENTES TAMAÑOS DE PANTALLA       */
@@ -141,16 +173,15 @@ margin:10px 0;
 }
 
 
-/* CELULARES NORMALES 
- la mayoría de teléfonos entran en este tamaño */
+/* CELULARES NORMALES  */
 @media (max-width:600px){
 
-/* el título se hace más pequeño para que no ocupe toda la pantalla */
+/* para el titulo */
 h1{
 font-size:22px;
 }
 
-/* las cajas o formularios ocupan casi todo el ancho */
+/* cajas o formularios */
 .tenedor{
 width:90%;
 }
@@ -162,17 +193,16 @@ width:90%;
 }
 
 
-/* TABLETS 
-aquí la pantalla ya es más grande pero aún no es computadora */
+/* teblets */
 @media (max-width:768px){
 
-/* si hay tarjetas o secciones con flexbox se acomodan una debajo de otra */
+/* tarjetas o flexbox */
 .info{
 flex-direction:column;
 align-items:center;
 }
 
-/* hacemos las tarjetas más anchas para aprovechar el espacio */
+/* tarjetas */
 .card{
 width:80%;
 }
@@ -180,11 +210,10 @@ width:80%;
 }
 
 
-/*  TABLETS GRANDES 
-algunos iPads o tablets horizontales entran aquí */
+/*  TABLETS GRANDES */
 @media (max-width:900px){
 
-/* el formulario o contenedor principal se adapta */
+/* el formulario o contenedor principal */
 .tenedor{
 width:70%;
 }
@@ -192,18 +221,16 @@ width:70%;
 }
 
 
-/*  LAPTOPS 
-pequeños ajustes cuando la pantalla es de laptop */
+/* pantallas de laptop */
 @media (max-width:1024px){
 
-/* bajamos un poco el tamaño del texto general */
+/*texto general */
 body{
 font-size:20px;
 }
 
 }
-/*  PANTALLAS GRANDES  
- cuando la pantalla es muy grande centramos el contenido */
+/*  PANTALLAS GRANDES  */
 @media (min-width:1200px){
 
 /* esto evita que el contenido quede demasiado estirado */
@@ -211,5 +238,5 @@ main{
 max-width:1200px;
 margin:auto;
 }
-}
 
+}
