@@ -1,52 +1,89 @@
-<!DOCTYPE html>
-<!--habilita caracteres especiales del español-->
+<!doctype html>
 <html lang="es">
-<head>
-    <!--encabezado-->
-    <meta charset="UTF-8">
-    <!-- acomoda el contenido en distintos dispositivos -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--titulo del la pestaña -->
-            <title>Iniciar Sesión </title>
-    <link rel="stylesheet" href="iniciodesesionese.css">
-</head>
-<!-- contenido de la pagina-->
-<body>
-
-    <img src="chark.webp" alt="fondo acuatico azul marino con olas que se pueden observar en la parte de arriba y reflejos que indican que la luz entra a traves del agua" class="fondo">
-
-    <main class="wrapper">
-        <!-- formulario de inicio de sesion -->
-        <form action="">
-            <header>
-                <!-- titulo del apartado donde se encuentra el formulario -->
-                <h1>¡Bienvenido de Nuevo!</h1>
-            </header>
-            <!-- apartado para introducir el nombre de usuario-->
-            <section class="input-box">
-                <input type="text" placeholder="usuario" required>
-            </section>
-            <!-- caja para introducir la contraseña -->
-            <section class="input-box">
-                <input type="password" placeholder="contraseña" required>
-            </section>
-            <!-- boton para fuardar la contraseña-->
-            <section class="recorda">
-                <label>
-                    <input type="checkbox" class="verificar">
-                    ¿Recordarme?
-                </label>
-                <!-- opcion para enviar un mail si olvidaste la contraseña -->
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </section>
-            <!-- boton para enviar el formulario-->
-            <button type="submit" class="btn">Iniciar sesión</button>
-            <section class="registra">
-                <!-- te redirije a la pagina de registro por si no tienes una cuenta crearla -->
-                <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
-            </section>
-        </form>
+    <!--encabezado del formulario-->
+    <head>
+        <!-- conectar css -->
+        <link rel="stylesheet" href="iniciodesesionese.css">
+        <!-- habilita los caracteres especiales -->
+        <meta charset="UTF-8">
+        <!-- acomoda el contenido en distintos dispositivos -->        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--titulo del la pestaña -->
+        <title>CSI-SHARK</title>
+    </head>
+    <body>
+        <img src="CHICHARK.webp" alt="fondo acuatico azul marino con olas que se pueden observar en la parte de arriba y reflejos que indican que la luz entra a traves del agua" class="fondo">
         
-    </main>
-</body>
+        <!-- contenido de la pagina  -->
+        <main class="wrapper">
+            
+            <!--formulario de registro -->
+            <form id="registro" action="">
+                <header>
+                    <h1>¡Crea una Cuenta!</h1>
+                </header>
+                <section class="input-box">
+                    <input type="email" placeholder="correo" required>
+                </section>
+                <section class="input-box">
+                    <input type="text" placeholder="usuario" required>
+                </section>
+                <section class="input-box">
+                    <input type="password" placeholder="contraseña" required>
+                </section>
+                <section class="input-box">
+                    <input type="text" placeholder="numero de control" required>
+                </section>
+                <section class="campo-fecha">
+                    <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                </section>
+                <button type="submit" class="btn">Crear cuenta</button>
+                <section class="registra">
+                    <p>¿ya tienes una cuenta? <a href="#" onclick="mostrarLogin()">Inicia sesión</a></p>
+                </section>
+            </form>
+
+            <!--formulario de inicio de sesión -->
+            <form id="login" action="">
+                <header>
+                    <h1>¡Bienvenido de Nuevo!</h1>
+                </header>
+                <section class="input-box">
+                    <input type="text" placeholder="usuario" required>
+                </section>
+                <section class="input-box">
+                    <input type="password" placeholder="contraseña" required>
+                </section>
+             
+                <section class="recorda">
+                    <label>
+                        <input type="checkbox" class="verificar">
+                        ¿Recordarme?
+                    </label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </section>
+                <button type="submit" class="btn">Iniciar sesión</button>
+                <section class="registra">
+                    <p>¿No tienes una cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate</a></p>
+                </section>
+            </form>
+
+        </main>
+
+        <!--script para alternar entre formularios-->
+        <script>
+            function mostrarLogin() {
+                document.getElementById("registro").classList.remove("active");
+                document.getElementById("login").classList.add("active");
+            }
+            function mostrarRegistro() {
+                document.getElementById("login").classList.remove("active");
+                document.getElementById("registro").classList.add("active");
+            }
+            window.onload = function() {
+                document.getElementById("registro").classList.add("active");
+            }
+        </script>
+    </body>
 </html>
