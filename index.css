@@ -39,6 +39,86 @@ body {
     transition: background-color 0.4s, color 0.4s;
 }
 
+/*                                                    MENU BURGUER KJSSSJKJKASKASASKJ                                                   */
+
+nav{
+    background-color: #097aaa00;
+    padding: 1rem 2rem;
+   
+}
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+.menubur{
+    color:  #097aaa5a;
+   
+}
+.links{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+.links a{
+    color:#f4f6f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.links a:hover{
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+.menubur{
+    display: none;
+    background: none;
+    border: none;
+    color: #f4f6f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media(max-width: 768px){
+    .menubur{
+        display: block;
+    }
+    .links{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #043673;
+        flex-direction: column;
+        clip-path: circle(0px at 90% -10%);
+        pointer-events: none;
+    }
+    .links.active{
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .links li{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    .links.active li {
+        opacity: 1;
+        transform: translateY(0)
+    }
+    .links li:nth-child(1) {transition-delay: 0.1s;}
+     .links li:nth-child(2) {transition-delay: 0.2s;}
+      .links li:nth-child(3) {transition-delay: 0.3s;}
+       .links li:nth-child(4) {transition-delay: 0.4s;}
+}
+
+
+
+
+
 /* celular */
 @media (max-width: 768px) {
     body {
