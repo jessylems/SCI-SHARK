@@ -4,34 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCI SHARK | Plataforma Estudiantil</title>
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
-  <link rel="icon" type="image/webp" href="scishark.webp.webp"> 
+  <link rel="icon" type="image/webp" href="scishark.webp.webp">
 </head>
 <body>
     <input type="checkbox" id="modo-check">
 
     <header class="navbar">
         <figure class="logo-container">
-            <a href="index.html">
-  <img src="scishark.webp.webp"
-  alt="Imagen ilustrativa de un tiburón feliz con bata de laboratorio sosteniendo un vaso de precipitado"
-  class="logo"
-  loading="lazy"
-  decoding="async"
-  width="80"
-  height="80">
-</a>
+            <img src="scishark.webp.webp" alt="Logo" class="logo">
             <figcaption class="logo-text">SCI SHARK</figcaption>
         </figure>
         <nav>
-            <ul class="links">
+            <div class="nav-container">
+                <button class="menubur" id="mebur">☰</button>
+                </button>
+
+            <ul class="links" id="linkes">
                 <li><a href="practicas.html">Prácticas</a></li>
                 <li><a href="experimentos.html">Experimentos</a></li>
                 <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
                 <li><a href="tipos de energia.html">Energías</a></li>
             </ul>
         </nav>
+    </div>
         <aside class="cuenta-container">
             <a href="#" class="perfil-link"></a>
         </aside>
@@ -74,6 +72,6 @@
      <footer>
         <small>Proyecto científico escolar — Sci Shark 2026</small>
     </footer>
-
+   <script src="BURGER.js"></script>
 </body>
 </html>
