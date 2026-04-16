@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><link rel="stylesheet" href="style.css">
+<head>
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Experimentos</title>
-
 </head>
-
-<!-- inicio del Logito -->
-
 <body>
-<header class="hero">
+ <input type="checkbox" id="modo-check">
 
-    <div class="top-bar">
-        <img src="scishark.webp.webp" class="logo">
+<header class="hero" role="banner">
+
+    <div class="top-bar" role="navigation" aria-label="Barra de navegación">
+      <a href="index.html">
+  <img src="scishark.webp.webp"
+  alt="Imagen ilustrativa de un tiburón feliz con bata de laboratorio sosteniendo un vaso de precipitado"
+  class="logo"
+  loading="lazy"
+  decoding="async"
+  width="80"
+  height="80">
+</a>
         <h2>SCI SHARK</h2>
+        
+    
     </div>
 
     <h1><i class="fa-solid fa-flask-vial"></i> Experimentos</h1>
@@ -25,61 +35,64 @@
     </p>
 
 </header>
-</body>
 
+<main role="main">
 
-
-<div class="search">
-    <input type="text" placeholder="Buscar experimento...">
-</div>
-
-<div class="container">
-    <div class="cards">
-
-    
-
-        <div class="card">
-        
-    <span class="tag fisica">Física</span>
-            <h3>Velocidad de la luz</h3>
-            <p>Calcula una constante universal usando un microondas y chocolate.</p>
-            <button onclick="verTutorial('caida')">Ver tutorial</button>
-        </div>
-
-        <div class="card">
-         
-    <span class="tag quimica">Química</span>
-            <h3>Batería galvánica de monedas</h3>
-            <p>Construye una celda voltaica funcional con cartón, vinagre y cobre.</p>
-            <button onclick="verTutorial('ph')">Ver tutorial</button>
-        </div>
-
-       <div class="card">
-    <span class="tag biologia">Biología</span>
-            <h3>Extracción de ADN frutal</h3>
-            <p>Aísla las hebras de material genético usando alcohol y jabón de trastes.</p>
-            <button onclick="verTutorial('foto')">Ver tutorial</button>
-        </div>
-
-        <div class="card">
-    <span class="tag fisica">Física</span>
-            <h3>Implosión por vacío</h3>
-            <p>Demuestra la fuerza de la atmósfera colapsando una lata con choque térmico.</p>
-            <button onclick="verTutorial('ph')">Ver tutorial</button>
-        </div>
-
+    <!-- BUSCADOR -->
+   <section class="search">
+    <div class="search-box">
+        <input type="text" id="buscador" placeholder="Buscar experimento...">
+        <i class="fa-solid fa-magnifying-glass" id="btnBuscar"></i>
     </div>
-</div>
+</section>
 
-<a>
-function verTutorial(exp) {
-    alert( + exp);
-}
-</a>
+    <!-- TARJETAS -->
+    <section class="container">
+        <section class="cards" role="region" aria-label="Lista de experimentos">
 
-<footer>
-        <p>proyecto cientifico 2026 / SCI SHARK</p>
-    </footer>
+            <article class="card" role="article">
+                <span class="tag fisica">Física</span>
+                <h3>Velocidad de la luz</h3>
+                <p>Calcula una constante universal usando un microondas y chocolate.</p>
+                <a href="tutorial1.html" class="btn-primario">Ver tutorial</a>
+            </article>
+
+            <article class="card" role="article">
+                <span class="tag quimica">Química</span>
+                <h3>Batería galvánica de monedas</h3>
+                <p>Construye una celda voltaica funcional con cartón, vinagre y cobre.</p>
+                <a href="tutorial2.html" class="btn-primario">Ver tutorial</a>
+            </article>
+
+            <article class="card" role="article">
+                <span class="tag biologia">Biología</span>
+                <h3>Extracción de ADN frutal</h3>
+                <p>Aísla las hebras de material genético usando alcohol y jabón de trastes.</p>
+                <a href="tutorial3.html" class="btn-primario">Ver tutorial</a>
+            </article>
+
+            <article class="card" role="article">
+                <span class="tag fisica">Física</span>
+                <h3>Implosión por vacío</h3>
+                <p>Demuestra la fuerza de la atmósfera colapsando una lata con choque térmico.</p>
+                <a href="tutorial4.html" class="btn-primario">Ver tutorial</a>
+            </article>
+
+        </section>
+    </section>
+
+</main>
+
+ <label for="modo-check" class="btn-toggle">
+        🌙 Cambiar modo
+    
+    </label>
+   
+<footer role="contentinfo">
+    <p>Proyecto científico 2026 / SCI SHARK</p>
+</footer>
+
+<script src="experimentosjava.js"></script>
+
 </body>
-
 </html>
