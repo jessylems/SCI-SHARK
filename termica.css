@@ -1,0 +1,197 @@
+:root {
+    --azul-oscuro: #002b50;
+    --azul-medio: #004080;
+    --azul-claro: #00f7ff;
+    --blanco: #ffffff;
+
+    --glass: rgba(255, 255, 255, 0.08);
+    --borde-glass: rgba(255, 255, 255, 0.15);
+
+    --sombra: 0 10px 30px rgba(0,0,0,0.4);
+    --neon: 0 0 10px rgba(0,247,255,0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("fondo_scishark.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #eaeaea;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, var(--azul-oscuro), var(--azul-medio));
+    color: white;
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(10px);
+}
+
+/* NAV */
+.links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.links a {
+    color: #f4f6f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.links a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+/* LOGO */
+.logo {
+    height: 50px;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* LAYOUT */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* IZQUIERDA */
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 3rem;
+    color: var(--azul-claro);
+    text-shadow: var(--neon);
+    margin-bottom: 30px;
+}
+
+/* CALCULADORA */
+.calculadora {
+    background: linear-gradient(145deg, rgba(10, 20, 60, 0.9), rgba(0, 80, 150, 0.6));
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: slideInLeft 0.8s ease;
+    transition: 0.4s;
+    color: #fff;
+}
+
+.calculadora:hover {
+    transform: translateY(-6px);
+}
+
+.calculadora input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 15px;
+}
+
+.calculadora input:focus {
+    border-color: #00f7ff;
+    box-shadow: 0 0 10px rgba(0,247,255,0.7);
+}
+
+.calculadora button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #004080, #00f7ff);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.calculadora button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,247,255,0.8);
+}
+
+/* TARJETA */
+.tarjeta-energia {
+    background: rgba(0, 43, 80, 0.6);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--borde-glass);
+    animation: fadeIn 1s ease;
+}
+
+/* BLOQUES */
+.bloque {
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--borde-glass);
+    transition: 0.3s;
+}
+
+.bloque:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--neon);
+}
+
+/* COLORES */
+.ventaja { border-left: 4px solid #00ff9c; }
+.desventaja { border-left: 4px solid #ff4d4d; }
+.alternativa { border-left: 4px solid #00f7ff; }
+
+/* FOOTER */
+footer {
+    background: var(--azul-oscuro);
+    padding: 30px;
+    margin-top: 50px;
+}
+
+/* ANIMACIONES */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}

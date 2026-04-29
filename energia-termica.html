@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/webp" href="scishark.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energía Térmica - Sci Shark</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="termica.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <!-- LOGO -->
+    <div class="logo-container">
+        <img src="scishark.webp" alt="Logo Sci Shark" class="logo">
+        <span class="logo-text">SCI SHARK</span>
+    </div>
+
+    <!-- NAV NORMAL (SIN HAMBURGUESA) -->
+    <nav>
+        <ul class="links">
+            <li><a href="practicas.html">Prácticas</a></li>
+            <li><a href="experimentos.html">Experimentos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="tipos-de-energia.html">Energías</a></li>
+        </ul>
+    </nav>
+</header>
+
+<p class="header-subtitle">Energía Térmica</p>
+
+<div class="layout">
+
+    <!-- IZQUIERDA -->
+    <div class="columna-izquierda">
+        <h1 class="main-title">Energía Térmica</h1>
+
+        <div class="calculadora">
+            <h2>Calculadora</h2>
+
+            <div class="calc-section">
+                <h4>Punto de Ebullición (según presión)</h4>
+                <input type="number" id="presion" placeholder="Presión (atm)">
+                <button onclick="calcularEbullicion()">Calcular</button>
+                <p id="resultadoEbullicion"></p>
+            </div>
+
+            <hr>
+
+            <div class="calc-section">
+                <h4>Punto de Fusión</h4>
+                <input type="number" id="kf" placeholder="Constante Kf">
+                <input type="number" id="molalidad" placeholder="Molalidad">
+                <input type="number" id="tempOriginal" placeholder="Punto de fusión puro (°C)">
+                <button onclick="calcularFusion()">Calcular</button>
+                <p id="resultadoFusion"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DERECHA -->
+    <main class="info-derecha">
+        <section class="tarjeta-energia">
+
+            <header class="encabezado">
+                <h2 class="titulo">
+                    <i class="fa-solid fa-bolt"></i> Energía Térmica
+                </h2>
+                <p class="subtitulo">Conceptos clave y funcionamiento</p>
+            </header>
+
+            <div class="contenido-grid">
+
+                <article class="bloque">
+                    <h4><i class="fa-solid fa-fire"></i> ¿Qué es?</h4>
+                    <p>
+                        La energía térmica es la energía interna de un cuerpo originada por el movimiento de sus partículas.
+                    </p>
+                </article>
+
+                <article class="bloque">
+                    <h4><i class="fa-solid fa-gears"></i> Funcionamiento</h4>
+                    <p>
+                        El calor convierte el agua en vapor que mueve turbinas generando electricidad.
+                    </p>
+                </article>
+
+                <article class="bloque ventaja">
+                    <h4><i class="fa-solid fa-circle-check"></i> Ventajas</h4>
+                    <ul>
+                        <li>Producción constante</li>
+                        <li>Alta eficiencia</li>
+                        <li>Tecnología madura</li>
+                    </ul>
+                </article>
+
+                <article class="bloque desventaja">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Desventajas</h4>
+                    <ul>
+                        <li>Contaminación</li>
+                        <li>Uso de combustibles fósiles</li>
+                    </ul>
+                </article>
+
+                <article class="bloque alternativa">
+                    <h4><i class="fa-solid fa-leaf"></i> Alternativas</h4>
+                    <p>
+                        Energía geotérmica y solar térmica.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <small>Proyecto científico escolar — Sci Shark 2026</small>
+
+        <ul>
+            <li><a href="practicas.html">Prácticas</a></li>
+            <li><a href="experimentos.html">Experimentos</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="tipos-de-energia.html">Energías</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="energi.js"></script>
+</body>
+</html>

@@ -1,50 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+    <!-- Configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tipos de energia</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link a FW para iconos y emojis estilizados -->
+
+    <title>Tipos de Energía | SCI SHARK</title>
+    <link rel="icon" type="image/webp" href="scishark.webp.webp">
+
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- conexión al archivo CSS donde está el diseño de la página -->
+    <!-- CSS -->
     <link rel="stylesheet" href="energia.css">
-</head>
-          <figure class="logo-container">
-            <img src="scishark.webp.webp" alt="Logo de la mascota de Sci Shark" class="logo">
-            <figcaption class="logo-text">SCI SHARK</figcaption>
-        </figure>
 
+    <!-- JS -->
+    <script defer src="energi.js"></script>
+
+</head>
 
 <body>
-    <p>aqui podras encontrar formularios,PDF y ejercicios de estos tres tipos de energias </p>
-      <ul "class=links">
-                 <li><a href=""></a>energia 1</li>
-                <li><a href=""></a>energia 2</li>
-                <li><a href=""></a>energia 3</li>
-</ul>
 
-<section class="energia-section">
-    <h2>Tipos de Energía</h2>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <figure class="logo-container">
+            <img src="scishark.webp" alt="Logo de la mascota de Sci Shark" class="logo">
+            <figcaption class="logo-text">SCI SHARK</figcaption>
+        </figure>
+        <p class="header-subtitle">Tipos de energía importantes</p>
+    </header>
 
-    <!-- PDF principal -->
-    <div class="pdf-principal">
-        <iframe src="pdfs/tipos-energia.pdf"></iframe>
+    <!-- ===== MENÚ DE ENERGÍAS ===== -->
+    <main>
+        <section class="energias" aria-label="Tipos de energía">
+            <h2>Tipos de energía</h2>
+            <div class="energia-botones">
+                
+                <!-- Energía Solar -->
+           <!-- Energía Solar -->
+<a href="energia-hidraulica.html" class="energia-item">
+    <h3><i class="fa-solid fa-water"></i> Energía Hidráulica</h3>
+    <p>La energía hidráulica se obtiene aprovechando el movimiento del agua en ríos, presas o corrientes.</p>
+</a>
+
+<!-- Energía Eólica -->
+<a href="energia-eolica.html" class="energia-item">
+    <h3><i class="fa-solid fa-wind"></i> Energía Eólica</h3>
+    <p>La energía eólica se genera a partir del viento utilizando aerogeneradores.</p>
+</a>
+
+<!-- Energía Térmica -->
+<a href="energia-termica.html" class="energia-item">
+    <h3><i class="fa-solid fa-fire"></i> Energía Térmica</h3>
+    <p>La energía térmica se obtiene del calor, como en las centrales termoeléctricas.</p>
+</a>
+                    </a>
+                </button>
+            </div>
+        </section>
+    </main>
+
+<div class="contenedor-tarjetas">
+
+    <div class="tarjeta-energia">
+        <h3>Energía Hidráulica</h3>
+        <p>
+            La energía hidráulica se obtiene aprovechando el movimiento del agua en ríos, presas o corrientes. 
+            Su fuerza impulsa turbinas que generan electricidad. 
+            Es una de las fuentes renovables más antiguas y eficientes. 
+            Sin embargo, depende de la disponibilidad de agua.
+        </p>
     </div>
 
-    <!-- Links a otros PDFs -->
-    <div class="pdf-links">
-        <a href="pdfs/energia-solar.pdf" target="_blank" class="card">Energía Solar</a>
-        <a href="pdfs/energia-eolica.pdf" target="_blank" class="card">Energía Eólica</a>
-        <a href="pdfs/energia-hidraulica.pdf" target="_blank" class="card">Energía Hidráulica</a>
+    <div class="tarjeta-energia">
+        <h3>Energía Térmica</h3>
+        <p>
+            La energía térmica se basa en el uso del calor. 
+            Este puede provenir de combustibles fósiles, reacciones químicas o fuentes naturales como el sol o la geotermia. 
+            Se utiliza para producir vapor y mover turbinas en centrales eléctricas.
+        </p>
     </div>
-</section>
 
-<h2>En esta sección se explorarán tres tipos de energía de manera dinámica y entretenida.
-     Cada apartado contará con documentos explicativos que facilitarán la comprensión, 
-     además de juegos interactivos que permitirán aplicar lo aprendido de forma divertida
-     . También se incluirán recursos y curiosidades 
-    que despertarán el interés de los estudiantes, convirtiendo el aprendizaje en una experiencia completa y atractiva.
-</h2>
+    <div class="tarjeta-energia">
+        <h3>Energía Eólica</h3>
+        <p>
+            La energía eólica aprovecha la fuerza del viento mediante aerogeneradores. 
+            Transforma su energía en electricidad limpia y renovable. 
+            Es clave para reducir la contaminación. 
+            No obstante, depende de la intensidad y constancia del viento.
+        </p>
+    </div>
+
+</div>
+    <!-- ===== MODO OSCURO ===== -->
+    <section class="modo">
+        <label for="modo-check" class="btn-toggle">
+            🌙 Cambiar modo
+        </label>
+        <input type="checkbox" id="modo-check" hidden>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <small>Proyecto científico escolar — Sci Shark 2026</small>
+            </div>
+            <nav class="footer-nav" aria-label="Navegación del sitio">
+                <ul>
+                    <li><a href="practicas.html">Prácticas</a></li>
+                    <li><a href="experimentos.html">Experimentos</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="tipos-de-energia.html">Energías</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
