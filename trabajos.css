@@ -1,0 +1,245 @@
+/* ===== FUENTE ===== */
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.otf') format('opentype');
+}
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+body{
+    font-family:'Coolvetica', sans-serif;
+    background: url("fondo_scishark.webp") center/cover no-repeat fixed;
+    color:#ffffff;
+}
+
+/* ===== HEADER ===== */
+header{
+    text-align:center;
+    padding:30px 20px;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+.logo-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.logo{
+    width:60px;
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:bold;
+}
+
+header h1{
+    font-size:26px;
+    margin:15px 0;
+}
+
+header p{
+    font-size:15px;
+    opacity:0.8;
+}
+
+/* ===== NAV ===== */
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0%;
+    height:2px;
+    background:#00D4FF;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ===== FORMULARIO ===== */
+.tenedor{
+    max-width:420px;
+    margin:40px auto;
+    padding:25px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.tenedor label{
+    display:block;
+    margin-bottom:5px;
+    font-size:14px;
+}
+
+.tenedor input{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+
+    border:none;
+    border-radius:8px;
+}
+
+/* ===== BOTÓN ===== */
+.tenedor button{
+    width:100%;
+    padding:12px;
+
+    border:none;
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#00D4FF,#0077B6);
+    color:white;
+    font-size:16px;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.tenedor button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 12px #00D4FF;
+}
+
+/* ===== PREVIEW ===== */
+.preview{
+    text-align:center;
+    font-size:14px;
+    margin-bottom:10px;
+    opacity:0.8;
+}
+
+/* ===== BARRA DE PROGRESO ===== */
+.barra-container{
+    width:100%;
+    height:8px;
+    background:rgba(255,255,255,0.2);
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+.barra{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00D4FF,#00ffcc);
+    transition:width 0.3s;
+}
+
+/* ===== LISTA DE TRABAJOS ===== */
+.lista-trabajos{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.lista-trabajos h2{
+    margin-bottom:20px;
+}
+
+#contenedor-trabajos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+/* TARJETAS */
+.trabajo{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.2);
+
+    padding:15px;
+    transition:0.3s;
+}
+
+.trabajo:hover{
+    transform:translateY(-8px);
+}
+
+.trabajo a{
+    color:#00D4FF;
+    text-decoration:none;
+}
+
+/* ===== MENSAJES ===== */
+#mensajes{
+    text-align:center;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+/* ===== TEXTO INFORMATIVO ===== */
+.textoinformativo{
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+    line-height:1.6;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    margin-top:40px;
+    padding:25px;
+    text-align:center;
+
+    background:linear-gradient(180deg,#002b50,#001a33);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:600px){
+
+header h1{
+    font-size:20px;
+}
+
+nav ul{
+    flex-direction:column;
+}
+
+.tenedor{
+    width:90%;
+}
+
+}

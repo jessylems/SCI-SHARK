@@ -2,31 +2,34 @@
 <html lang="es">
 
 <head>
+<link rel="icon" type="image/webp" href="scishark.webp.webp">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tus trabajos</title>
 
-<link rel="stylesheet" href="estilos3.css">
-
+<link rel="stylesheet" href="trabajos.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
-
-
-<header>
-    <!--aqui se creo una clase-->
-
-<div class="logo-container">
-<img src="scishark.webp" alt="el logo de scishark.edu" class="logo">
-<span class="logo-text">SCI SHARK</span>
-</div>
 <body>
 
+<header>
 
-<h1>Aquí podras subir tus trabajos dados en clases 
-    y recibiras un feedback de una ia y otros alumnos <i class="fa-solid fa-file-excel"></i></h1>
+<!-- logo -->
+<figure class="logo-container">
+    <img src="scishark.webp.webp" alt="Logo de la mascota de Sci Shark" class="logo">
+    <figcaption class="logo-text">SCI SHARK</figcaption>
+</figure>
 
+<h1>
+Aquí podrás subir tus trabajos dados en clase
+y recibir feedback de una IA y otros alumnos
+<i class="fa-solid fa-file-excel"></i>
+</h1>
+
+<!-- navegación -->
 <nav>
 <ul>
 <li><a href="experimentos.html">Experimentos</a></li>
@@ -40,18 +43,39 @@
 
 <main>
 
+<!-- ===== FORMULARIO ===== -->
 <section class="tenedor">
 
-<form>
+<form id="form-trabajo">
 
 <div class="textoboton">
-<label>Nombre de tu trabajo</label>
-<input type="text" name="nombre-trabajo" placeholder="ej. trabajo de biología">
+<label for="nombre">Nombre de tu trabajo</label>
+<input 
+type="text"
+id="nombre"
+name="nombre-trabajo"
+placeholder="ej. trabajo de biología"
+required
+>
 </div>
 
 <div class="archivo">
-<label>Selecciona tu archivo</label>
-<input type="file" name="archivo" accept=".pdf,.doc,.docx">
+<label for="archivo">Selecciona tu archivo</label>
+<input
+type="file"
+id="archivo"
+name="archivo"
+accept=".pdf,.doc,.docx"
+required
+>
+</div>
+
+<!-- preview del archivo -->
+<div id="preview" class="preview"></div>
+
+<!-- barra de progreso -->
+<div id="barra-container" class="barra-container">
+    <div id="barra" class="barra"></div>
 </div>
 
 <button type="submit">Enviar trabajo</button>
@@ -60,42 +84,50 @@
 
 </section>
 
-</main>
 
-<section class="textoinformativo"
+<!-- ===== LISTA DE TRABAJOS (para el futuro JS/PHP) ===== -->
+<section class="lista-trabajos">
+
+<h2>📂 Trabajos subidos</h2>
+
+<div id="contenedor-trabajos">
+
+
+
+</div>
+
+</section>
+
+
+<!-- ===== MENSAJES DINÁMICOS ===== -->
+<div id="mensajes"></div>
+
+
+<!-- ===== INFORMACIÓN ===== -->
+<section class="textoinformativo">
+
 <p>
 La visualización científica es una herramienta fundamental para representar datos,
 experimentos y conceptos complejos de una forma gráfica, clara y comprensible.
-A través de gráficos, diagramas, simulaciones, modelos y representaciones visuales,
-los estudiantes pueden observar y analizar información que normalmente sería difícil
-de entender solo con texto o números. Estas representaciones permiten transformar
-ideas abstractas en imágenes que ayudan a comprender mejor cómo funcionan
-los fenómenos naturales y científicos.
+A través de gráficos, diagramas, simulaciones y modelos, los estudiantes pueden entender mejor los fenómenos.
 </p>
 
 <p>
-En el ámbito educativo, la visualización científica cumple un papel muy importante,
-ya que permite convertir la información teórica en ejemplos visuales que facilitan
-el aprendizaje y hacen que el estudio sea más interesante. Cuando los estudiantes
-pueden ver un proceso representado mediante imágenes, animaciones o diagramas,
-les resulta más sencillo relacionar los conceptos con situaciones reales y entender
-cómo se aplican en diferentes áreas de la ciencia.
+En el ámbito educativo, esto facilita el aprendizaje y hace el estudio más interesante,
+permitiendo relacionar conceptos con situaciones reales.
 </p>
 
-<p>
-Por ejemplo, en física es posible representar trayectorias de movimiento, fuerzas,
-velocidades o cambios de energía mediante gráficos y simulaciones. En biología se
-pueden observar estructuras celulares, sistemas del cuerpo humano o procesos como
-la fotosíntesis. En química, los modelos moleculares permiten visualizar cómo se
-organizan los átomos y cómo ocurren las reacciones químicas. Todo esto ayuda a que
-los estudiantes desarrollen una comprensión más profunda de los temas científicos.
-</p>
+</section>
+
+</main>
+
 
 <footer>
-
-<h3>SCI SHARK - plataforma estudiantil 2026<h3>
-
+<h3>SCI SHARK - plataforma estudiantil 2026</h3>
 </footer>
+
+<!-- JS externo -->
+<script src="trabajos.js"></script>
 
 </body>
 </html>

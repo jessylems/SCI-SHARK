@@ -1,69 +1,298 @@
-
-navbar {
-    background-color: #2b657f;
-    padding: 15px;
-    display: flex;
-    align-items: center;
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.otf') format('opentype');
 }
 
-.logo-text{
-    font-weight:georgia, times new roman, times, serif;
-    text-align: center;
-    font-size:20px;
-    margin-left:10px;
-}
-
-
-nav a:hover{
-    text-decoration:underline;
-}
+/* Usé el selector universal para quitar márgenes y padding
+   por defecto del navegador y que todo empiece limpio */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente general */
+}
+
+/* Usé body para darle el color de fondo general
+   y el color de texto base */
+body {
+font-family: 'coolvetica' ;
+    font-weight: normal;
+     letter-spacing: 0.7px; 
+    background-image: url("fondo_scishark.webp");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color:#1a1a1a;
+
+}
+
+
+/* Usé header para organizar el menú superior
+   en forma horizontal */
+header {
+    display: flex; /* Para acomodar elementos en fila */
+    height: 70px; /* Altura del encabezado */
+    background-color: #002b50; /* Color más oscuro */
+    padding: 20px;
+    justify-content: space-between; /* Separar elementos */
+}
+
+/* Usé .equipo para centrar toda la sección del equipo
+   y darle un ancho controlado */
+.equipo{
+    width: 85%;
+    padding: 25px;
+    margin: 0 auto; /* Centrado horizontal */
+    text-align: center; /* Centrar texto */
+}
+
+/* Usé este h1 para darle estilo al título principal */
+.equipo h1{
+    font-size: 36px; /* Tamaño grande */
+    color: #081825; /* Color más oscuro */
+    margin-bottom: 20px; /* Espacio abajo */
+}
+
+/* Usé flexbox aquí para acomodar las tarjetas
+   del equipo en fila y que bajen si no caben */
+.equipo-container{
+    display: flex;
+    justify-content: space-around; /* Espacio entre tarjetas */
+    flex-wrap: wrap; /* Permite que bajen a otra línea */
+}
+
+/* Usé esta clase para diseñar cada tarjeta
+   de miembro del equipo */
+.miembros-equipo{
+    width: 200px; /* Tamaño fijo */
+    margin: 15px; /* Espacio alrededor */
+    border-radius: 10%; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px;
+    background-color: #0b1f29; /* Fondo oscuro */
     text-align: center;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    
+    cursor: pointer; /* Que se vea clickeable */
+    transition: transform 0.3s ease; /* Animación suave */
+}
 
+/* Usé hover para que la tarjeta suba
+   cuando el mouse pase encima */
+.miembros-equipo:hover {
+    transform: translateY(-10px); /* Se eleva */
+}
 
+/* Usé esto para darle forma circular
+   a las imágenes del equipo */
+.miembros-equipo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ajustar imagen sin deformar */
+    border-radius: 50%; /* Forma circular */
+    border: 4px solid #00D4FF; /* Borde azul */
+    margin-bottom: 10px;
+}
 
+/* Usé esto para el nombre del miembro */
+.miembros-equipo h3{
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
 
+/* Usé esta clase para el texto descriptivo
+   debajo del nombre */
+.contenido {
+    font-size: 16px;
+    color: rgb(255, 255, 255); 
+    line-height: 1.3; /* Espacio entre líneas */
+}
 
+/* Usé esto para el texto grande que va
+   debajo de toda la sección */
+.text-abajo{
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 60px 10%;
+}
+
+/* Usé esta clase para títulos secundarios */
+.title {
+    font-size: 32px;
+    color: #003f5c;
+    text-align: center;
+    margin-top: 20px;
+}
+footer {
+    background-color: #002b50; /* Mismo color que el header */
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+    margin-top:80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h2 {
+    font-size: 28px;
+    color: #003f5c;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* ===== PROPOSITO ===== */
+.proposito{
+text-align:center;
+padding:40px 20px;
+}
+
+.text-abajo{
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+background:rgba(0,0,0,0.1);
+padding:20px;
+border-radius:15px;
+}
+
+/* ===== SECCION MASCOTA ===== */
+.mascota{
+margin-top:40px;
+}
+
+.mascota h2{
+margin-bottom:20px;
+}
+
+/* CONTENEDOR DE CARDS */
+.mascota-cards{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/* CARDS */
+.card-mascota{
+background:#0b1f29;
+color:white;
+width:250px;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+/* EFECTO HOVER */
+.card-mascota:hover{
+transform:translateY(-10px);
+}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+
+.card-mascota{
+width:90%;
+}
+
+.text-abajo{
+font-size:16px;
+}
+
+}
+
+/* ===== RESPONSIVE PARA TABLETS ===== */
+@media (max-width:900px){
+
+.equipo-container{
+    justify-content:center; /* centra las tarjetas */
+}
+
+.miembros-equipo{
+    width:220px; /* un poco mas ancho */
+}
+
+.text-abajo{
+    font-size:24px;
+}
+/* animación inicial */
+.miembros-equipo,
+.card-mascota,
+.text-abajo {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+/* cuando aparece */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* miembro activo */
+.activo {
+    outline: 3px solid #00D4FF;
+    transform: scale(1.05);
+}
+}
+/* AJUSTES PARA DIFERENTES TAMAÑOS DE PANTALLA */
+
+/* Pantallas muy pequeñas (celulares compactos) */
+@media (max-width:480px){
+  body {
+    font-size:16px;
   }
-    body {
-        background-color: #6699c0;
-        color: #ffffff;
-        padding: 20px;
-;
-    }
 
-    img {
-        max-width: 100%;
-        height: 200px;
-        border-radius: 60px;
-        border: 10px solid #bbc7cf;
-    }
-    .team-member {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: left first baseline;
-        gap: 40px;
-        
-    }
-    .team-member{
-        text-align: center;
+  nav li {
+    display:block;
+    margin:10px 0;
+  }
+}
 
-    }
-    .team-member {
-        width: 150px;
-        border-radius: 15px;
+/* Celulares normales */
+@media (max-width:600px){
+  h1 {
+    font-size:22px;
+  }
 
-    }
-    .footer {
-        background-color: #2b657f;
-        color: #ffffff;
-        padding: 15px;
-        text-align: center;
-    }
+  form, section, article {
+    width:90%;
+    margin:auto;
+  }
+}
+
+/* Tablets */
+@media (max-width:768px){
+  .info {
+    flex-direction:column;
+    align-items:center;
+  }
+
+  section, article {
+    width:80%;
+    margin:auto;
+  }
+}
+
+/* Tablets grandes */
+@media (max-width:900px){
+  form, section, article {
+    width:70%;
+    margin:auto;
+  }
+}
+
+/* Laptops */
+@media (max-width:1024px){
+  body {
+    font-size:20px;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width:1200px){
+  main {
+    max-width:1200px;
+    margin:auto;
+  }
+}
