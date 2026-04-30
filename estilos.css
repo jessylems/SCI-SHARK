@@ -1,121 +1,224 @@
-/* ===== RESET GENERAL ===== */
-/* elimina margenes del navegador y mejora el modelo de caja */
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.otf') format('opentype');
+}
+
+:root {
+    --color-primario: #5687a8d9; 
+    --color-secundario: #4591c4c3;
+    --color-terciario: #569bd4f0;
+    --color-texto: #f5f9fc;
+    --color--oscuro:#203b51d7;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-
-/* ===== TITULOS GENERALES ===== */
 .title{
-    font-size:32px;
-    color:#003f5c;
-    text-align:center;
-    margin-top:20px;
+    font-size: 58px;
+    color:var(--color-primario);
+    text-align: center;
+    margin-top: 20px;
 }
 
-
-/* ===== CUERPO DE LA PAGINA ===== */
-body{
-    font-family: Arial, Helvetica, sans-serif;
-   background-image: url(fondo-perron);
+/* Configuración del cuerpo */
+body {
+    font-family: 'coolvetica';
+    font-weight: normal;
+    letter-spacing: 0.7px; 
+    background-image: url("fondo_scishark.webp");
+    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     color:#1a1a1a;
-    line-height:1.6;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/*                                                    MENU BURGUER KJSSSJKJKASKASASKJ                                                   */
+
+nav{
+    
+    padding: 1rem 2rem;
+   
+}
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/*menu color*/
+.menubur{
+    color:  var(--color-terciario);
+   
+}
+.links{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+.links a{
+    color:#f4f6f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.links a:hover{
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+.menubur{
+    display: none;
+    background: none;
+    border: none;
+    color: #f4f6f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media(max-width: 768px){
+    .menubur{
+        display: block;
+    }
+    .links{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #043673;
+        flex-direction: column;
+        clip-path: circle(0px at 90% -10%);
+        pointer-events: none;
+    }
+    .links.active{
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .links li{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    .links.active li {
+        opacity: 1;
+        transform: translateY(0)
+    }
+    .links li:nth-child(1) {transition-delay: 0.1s;}
+     .links li:nth-child(2) {transition-delay: 0.2s;}
+      .links li:nth-child(3) {transition-delay: 0.3s;}
+       .links li:nth-child(4) {transition-delay: 0.4s;}
 }
 
 
-/* ===== NAVBAR ===== */
-.navbar{
+
+
+
+/* celular */
+@media (max-width: 768px) {
+    body {
+        background-size: cover;   /* Mantiene la imagen adaptada */
+        background-attachment: scroll; /* Evita problemas en móviles con fixed */
+    }
+}
+
+/* Barra de navegación */
+.navbar {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 10%;
-    background-color:#2b657f; /* azul institucional */
-    color:white;
+    font-size: 19px;
+    background: #097aaa5a;  
+    color:#F5F9FC;
 }
 
-
-/* ===== LOGO ===== */
-.logo{
-    width:45px;
+.logo {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.logo-text{
-    font-weight:bold;
+.logo:hover {
+    transform: scale(1.3);
+}
+
+.logo-text {
+    font-weight:normal;
     font-size:20px;
     margin-left:10px;
 }
 
-.logo-container{
+.logo-container {
     display:flex;
     align-items:center;
 }
 
-
-/* ===== MENU DE NAVEGACION ===== */
-nav ul{
+nav ul {
     list-style:none;
     display:flex;
     gap:20px;
 }
 
-nav a{
+nav a {
     text-decoration:none;
     color:white;
-    font-weight:bold;
-    transition:0.3s;
 }
 
-nav a:hover{
+nav a:hover {
     text-decoration:underline;
 }
 
-
-/* ===== HERO (TEXTO PRINCIPAL) ===== */
-.hero{
+/* Sección Hero */
+.hero {
     text-align:center;
-    padding:80px 20px;
+    padding:45px 20px;
 }
 
-.hero h1{
-    font-size:42px;
-    color:#003f5c;
+.hero h1 {
+    font-size:89px;
+    color:var(--color--oscuro);
 }
 
-.hero h2{
-    margin:10px 0;
-    font-size:22px;
-    color:#005f73;
+.hero h2 {
+    margin:14px 0;
+    font-size:36px;
+    color:var(--color-terciario);
 }
 
-.hero p{
+.hero p {
     max-width:600px;
-    margin:15px auto;
+    font-size: 20px;
+    margin:16px auto;
+    color: var(--color-primario);
 }
 
-
-/* ===== BOTON DE INICIO DE SESION ===== */
-.btn-login{
+/* Botones */
+.btn-login {
     display:inline-block;
     margin-top:20px;
     padding:12px 30px;
-    background-color:#005f73;
-    color:#A2B5AF;
+    background-color:var(--color-secundario);
+    color:#f4f6f5;
     text-decoration:none;
     border-radius:8px;
-    font-weight:bold;
-    transition:0.3s;
+    width: 170px;
+    height: 50px;
+    transition: 0.2s;
 }
 
-.btn-login:hover{
-    background-color:#003f5c;
-    transform:scale(1.05);
+.btn-login:hover {
+    transform: translateY(-5px);
 }
 
-
-/* ===== SECCION DE TARJETAS ===== */
-.info{
+/* Tarjetas de información */
+.info {
     display:flex;
     justify-content:center;
     gap:30px;
@@ -123,95 +226,124 @@ nav a:hover{
     flex-wrap:wrap;
 }
 
-
-/* ===== TARJETAS ===== */
-.card{
-    background:#648bab;
+.card {
+    background:var(--color-primario);
     padding:25px;
     border-radius:10px;
     width:250px;
     text-align:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+    box-shadow:0 6px 13px rgba(20, 20, 20, 0.521);
+    transition: 0.3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
+.card h3 {
     margin-bottom:10px;
-    color:#003f5c;
+    color:var(--color--oscuro);
+    font-size: 22px;
 }
 
+.card:hover {
+    transform: translateY(-10px);
+}
 
-/* ===== FOOTER ===== */
-footer{
+/* Pie de página */
+footer {
     text-align:center;
     padding:20px;
-    background-color:#003f5c;
+    background-color:var(--color-primario);
     color:white;
-    margin-top:40px;
+    margin-top: 10px; 
 }
 
-/* AJUSTES PARA DIFERENTES TAMAÑOS DE PANTALLA */
-
-/* Pantallas muy pequeñas (celulares compactos) */
-@media (max-width:480px){
-  body {
-    font-size:16px;
-  }
-
-  nav li {
-    display:block;
-    margin:10px 0;
-  }
+.cuenta-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-/* Celulares normales */
-@media (max-width:600px){
-  h1 {
-    font-size:22px;
-  }
-
-  form, section, article {
-    width:90%;
-    margin:auto;
-  }
+/* Funcionalidad modo oscuro CSS */
+#modo-check {
+    display: none;
 }
 
-/* Tablets */
-@media (max-width:768px){
-  .info {
-    flex-direction:column;
-    align-items:center;
-  }
-
-  section, article {
-    width:80%;
-    margin:auto;
-  }
+/* Botón activador de modo oscuro */
+.btn-toggle {
+    display: block;
+    margin: 40px 0 10px 10%; 
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.3s;
 }
 
-/* Tablets grandes */
-@media (max-width:900px){
-  form, section, article {
-    width:70%;
-    margin:auto;
-  }
+.btn-toggle:hover {
+    background-color: var(--color-secundario);
 }
 
-/* Laptops */
-@media (max-width:1024px){
-  body {
-    font-size:20px;
-  }
+/* Cambiar colores a modo oscuro */
+body:has(#modo-check:checked) {
+    background-color: #2f5e91;
+    background-image:url(fondo_scishark.webp);
+    color: white;
 }
 
-/* Pantallas grandes */
-@media (min-width:1200px){
-  main {
-    max-width:1200px;
-    margin:auto;
-  }
+/* Aplicar color negro al texto :v */
+body:has(#modo-check:checked) .hero h1,
+body:has(#modo-check:checked) .hero h2,
+body:has(#modo-check:checked) .hero p,
+body:has(#modo-check:checked) .card p,
+body:has(#modo-check:checked) .card h3,
+body:has(#modo-check:checked) .navbar,
+body:has(#modo-check:checked) .navbar nav a, 
+body:has(#modo-check:checked) .logo-text,   
+body:has(#modo-check:checked) .card,
+body:has(#modo-check:checked) .btn-login {
+    color: rgba(15, 4, 4, 0.874) !important; 
+}
+    
+
+body:has(#modo-check:checked) .card {
+    background: #1d466799;
+}
+
+/* tablets y celuuus */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 60px; /* más pequeño en tablet */
+    }
+    .hero h2 {
+        font-size: 28px;
+    }
+    .title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 42px; /* más pequeño en celuuu */
+    }
+    .hero h2 {
+        font-size: 22px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .title {
+        font-size: 32px;
+    }
+    .info {
+        flex-direction: column; /* no amontonar*/
+        align-items: center;
+    }
+    .card {
+        width: 90%; /* celular tamaño kiii*/
+    }
+    nav ul {
+        flex-direction: column; /* para el menúppp */
+        gap: 10px;
+    }
 }
