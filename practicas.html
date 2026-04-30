@@ -1,70 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zona de Prácticas - SCI SHARK</title>
-<link rel="stylesheet" href="estilos2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCI SHARK - Zona de Prácticas</title>
+  <link rel="stylesheet" href="estilos2.css">
+  <meta name="description" content="Zona de prácticas estudiantiles con videos educativos de SCI SHARK.">
+  <!-- Icono -->
+    <link rel="icon" type="image/webp" href="scishark.webp">
 </head>
-
 <body>
+<!-- Barra de navegación de arriba -->
+    <header class="navbar">
+        <figure class="logo-container">
+            <img src="scishark.webp.webp" alt="Logo" class="logo">
+            <figcaption class="logo-text">SCI SHARK</figcaption>
+        </figure>
+        
+        <!-- Menú de navegación -->
+        <nav>
+            <ul class="links" id="links">
+                <li><a href="practicas.html">Prácticas</a></li>
+                <li><a href="experimentos.html">Experimentos</a></li>
+                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                <li><a href="tipos-de-energia.html">Energías</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="tus-trabajos.html">Tus trabajos</a></li>
+      </ul>
+   </nav>
 
-<!-- ===== HEADER ===== -->
-<header>
-    <h1> SCI SHARK - Zona de Prácticas</h1>
-    <h2> recuerda que no todos nacemos siendo albert einstein solo debes creer en ti</h2>
-    <nav>
-        <a href="#videos">Videos</a>
-        <a href="#tips">Consejos</a>
-       <li><a href="tus trabajos.html">tus trabajos</a></li>
-    </nav>
+   <h1>SCI SHARK - Zona de Prácticas</h1>
+   <p class="frase">
+     Todo es posible si te lo propones. Cree en ti mismo y nunca te rindas.  
+     Recuerda: el fracaso también es parte del aprendizaje.
+   </p>
 </header>
 
-<!-- ===== SECCIÓN VIDEOS ===== -->
- <!--seccion donde hago que se vea los videos recomendados-->
-<section id="videos">
-    <h2>📺 Videos Educativos</h2>
-    
+<main>
+  <section id="videos">
+    <h2>📺 Videos educativos</h2>
     <div class="video-container">
-        <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        frameborder="0" allowfullscreen></iframe>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/iXUp__ySIgw" 
+        title="10 asombrosos experimentos" allowfullscreen></iframe>
+        <p>10 asombrosos experimentos</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/Nwe7M71Fqxo" 
+        title="¿Qué es la ciencia?" allowfullscreen></iframe>
+        <p>¿Qué es la ciencia?</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/XUkmpMUci5o" 
+        title="La mayor mentira de la ciencia moderna" allowfullscreen></iframe>
+        <p>La mayor mentira de la ciencia moderna</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/HD0Hv9A3md4" 
+        title="Te muestro cómo pienso la física" allowfullscreen></iframe>
+        <p>Te muestro cómo pienso la física</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/2D0c2wE2p0Y" 
+        title="Los secretos del universo" allowfullscreen></iframe>
+        <p>Los secretos del universo</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/0rHUDWjR5gg" 
+        title="La teoría de la relatividad explicada" allowfullscreen></iframe>
+        <p>La teoría de la relatividad explicada</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/1wZbqgRz2xY" 
+        title="El poder de la biología" allowfullscreen></iframe>
+        <p>El poder de la biología</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/3JdWlSF195Y" 
+        title="La química en tu vida diaria" allowfullscreen></iframe>
+        <p>La química en tu vida diaria</p>
+      </div>
     </div>
+  </section>
+</main>
 
-    <div class="video-container">
-        <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/9bZkp7q19f0" 
-        frameborder="0" allowfullscreen></iframe>
-
-        
-    <div class="video-container">
-        <iframe width="560" height="315" 
-        src=" 
-    <div class="video-container">
-        <iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/9bZkp7q19f0" 
-        frameborder="0" allowfullscreen></iframe>
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-</section>
-
-<!-- ===== SECCIÓN TIPS ===== -->
- <!--aqui con el div class hize que se hiciera un recuadro para algunos tips utiles-->
-<section id="tips">
-    <h2>💡 Consejos y Tips</h2>
-    
-    <div class="tips-box">
-        <p>✔ Organiza tu tiempo con una agenda.</p>
-        <p>✔ Practica mínimo 30 minutos diarios.</p>
-        <p>✔ No memorices, comprende.</p>
-        <p>✔ Descansa bien antes de un examen.</p>
-        <p>✔ Mira videos utiles</p>
-    </div>
-</section>
-
-
-<footer>
-    <p>© 2026 SCI SHARK - Página Estudiantil</p>
+<footer class="footer">
+  <p>© 2026 SCI SHARK - Página estudiantil</p>
 </footer>
 
 </body>

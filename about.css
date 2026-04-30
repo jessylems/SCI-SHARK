@@ -3,296 +3,245 @@
     src: url('coolvetica.otf') format('opentype');
 }
 
-/* Usé el selector universal para quitar márgenes y padding
-   por defecto del navegador y que todo empiece limpio */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente general */
+/* ===== VARIABLES ===== */
+:root {
+    --color-primario: #073d67ed;
+    --color-secundario: #154b62ec;
+    --color-terciario: #15344df0;
+    --color-clarito: #055c9e8b;
+    --color-texto: #f5f9fcf0;
+    --color-oscuro: #0f273af0;
+
+    --color-card: rgba(0,0,0,0.6);
+    --color-glass: rgba(0,0,0,0.5);
 }
 
-/* Usé body para darle el color de fondo general
-   y el color de texto base */
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración del cuerpo */
 body {
-font-family: 'coolvetica' ;
+    font-family: 'coolvetica';
     font-weight: normal;
-     letter-spacing: 0.7px; 
+    letter-spacing: 0.7px; 
     background-image: url("fondo_scishark.webp");
-    background-size: cover; 
+    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
     background-position: center; 
     background-repeat: no-repeat;
     background-attachment: fixed; 
     color:#1a1a1a;
+    transition: background-color 0.4s, color 0.4s;
+}
+/* Barra de navegación */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    font-size: 19px;
+    background: #097aaa5a;  
+    color:#F5F9FC;
+}
 
+nav{
+    background-color: #097aaa00;
+    padding: 1rem 2rem;
+   
+}
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.3);
+}
+
+.logo-text {
+    font-weight:normal;
+    font-size:20px;
+    margin-left:10px;
+}
+
+.logo-container {
+    display:flex;
+    align-items:center;
+}
+
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a {
+    text-decoration:none;
+    color:white;
+}
+
+nav a:hover {
+    text-decoration:underline;
 }
 
 
-/* Usé header para organizar el menú superior
-   en forma horizontal */
-header {
-    display: flex; /* Para acomodar elementos en fila */
-    height: 70px; /* Altura del encabezado */
-    background-color: #002b50; /* Color más oscuro */
-    padding: 20px;
-    justify-content: space-between; /* Separar elementos */
-}
-
-/* Usé .equipo para centrar toda la sección del equipo
-   y darle un ancho controlado */
-.equipo{
-    width: 85%;
-    padding: 25px;
-    margin: 0 auto; /* Centrado horizontal */
-    text-align: center; /* Centrar texto */
-}
-
-/* Usé este h1 para darle estilo al título principal */
-.equipo h1{
-    font-size: 36px; /* Tamaño grande */
-    color: #081825; /* Color más oscuro */
-    margin-bottom: 20px; /* Espacio abajo */
-}
-
-/* Usé flexbox aquí para acomodar las tarjetas
-   del equipo en fila y que bajen si no caben */
-.equipo-container{
+/* LINKS */
+.links {
     display: flex;
-    justify-content: space-around; /* Espacio entre tarjetas */
-    flex-wrap: wrap; /* Permite que bajen a otra línea */
+    gap: 2rem;
+    list-style: none;
 }
 
-/* Usé esta clase para diseñar cada tarjeta
-   de miembro del equipo */
-.miembros-equipo{
-    width: 200px; /* Tamaño fijo */
-    margin: 15px; /* Espacio alrededor */
-    border-radius: 10%; /* Bordes redondeados */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    padding: 20px;
-    background-color: #0b1f29; /* Fondo oscuro */
+.links a {
+    color: #f4f6f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.links a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+/* ===== EQUIPO ===== */
+.equipo {
+    width: 85%;
+    margin: auto;
     text-align: center;
-    cursor: pointer; /* Que se vea clickeable */
-    transition: transform 0.3s ease; /* Animación suave */
+    padding: 40px 0;
 }
 
-/* Usé hover para que la tarjeta suba
-   cuando el mouse pase encima */
-.miembros-equipo:hover {
-    transform: translateY(-10px); /* Se eleva */
-}
-
-/* Usé esto para darle forma circular
-   a las imágenes del equipo */
-.miembros-equipo img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* Ajustar imagen sin deformar */
-    border-radius: 50%; /* Forma circular */
-    border: 4px solid #00D4FF; /* Borde azul */
-    margin-bottom: 10px;
-}
-
-/* Usé esto para el nombre del miembro */
-.miembros-equipo h3{
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-/* Usé esta clase para el texto descriptivo
-   debajo del nombre */
-.contenido {
-    font-size: 16px;
-    color: rgb(255, 255, 255); 
-    line-height: 1.3; /* Espacio entre líneas */
-}
-
-/* Usé esto para el texto grande que va
-   debajo de toda la sección */
-.text-abajo{
-    font-size: 30px;
-    margin-top: 20px;
-    text-align: center;
-    padding: 60px 10%;
-}
-
-/* Usé esta clase para títulos secundarios */
 .title {
     font-size: 32px;
-    color: #003f5c;
-    text-align: center;
-    margin-top: 20px;
+    color: white;
+    margin-bottom: 20px;
 }
-footer {
-    background-color: #002b50; /* Mismo color que el header */
-    color: #ffffff;
-    text-align: center;
-    padding: 50px;
-    margin-top:80px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+
+.equipo-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
-h2 {
-    font-size: 28px;
-    color: #003f5c;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+
+/* TARJETAS */
+.miembros-equipo {
+    width: 220px;
+    background: var(--color-card);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
+
+.miembros-equipo:hover {
+    transform: translateY(-10px);
+}
+
+.miembros-equipo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 4px solid #00D4FF;
+
+    margin-bottom: 10px;
+}
+
+.contenido {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
 /* ===== PROPOSITO ===== */
-.proposito{
-text-align:center;
-padding:40px 20px;
+.proposito {
+    text-align: center;
+    padding: 40px 20px;
 }
 
-.text-abajo{
-max-width:800px;
-margin:auto;
-font-size:18px;
-line-height:1.6;
-background:rgba(0,0,0,0.1);
-padding:20px;
-border-radius:15px;
+.proposito h2 {
+    color: white;
+    margin-bottom: 15px;
 }
 
-/* ===== SECCION MASCOTA ===== */
-.mascota{
-margin-top:40px;
-}
-
-.mascota h2{
-margin-bottom:20px;
-}
-
-/* CONTENEDOR DE CARDS */
-.mascota-cards{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-/* CARDS */
-.card-mascota{
-background:#0b1f29;
-color:white;
-width:250px;
-padding:20px;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-/* EFECTO HOVER */
-.card-mascota:hover{
-transform:translateY(-10px);
-}
-
-/* RESPONSIVE */
-@media (max-width:600px){
-
-.card-mascota{
-width:90%;
-}
-
-.text-abajo{
-font-size:16px;
-}
-
-}
-
-/* ===== RESPONSIVE PARA TABLETS ===== */
-@media (max-width:900px){
-
-.equipo-container{
-    justify-content:center; /* centra las tarjetas */
-}
-
-.miembros-equipo{
-    width:220px; /* un poco mas ancho */
-}
-
-.text-abajo{
-    font-size:24px;
-}
-/* animación inicial */
-.miembros-equipo,
-.card-mascota,
 .text-abajo {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
+    max-width: 800px;
+    margin: auto;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    background: var(--color-glass);
+    color: white;
+
+    padding: 20px;
+    border-radius: 15px;
 }
 
-/* cuando aparece */
-.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* ===== MASCOTA ===== */
+.mascota {
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* miembro activo */
-.activo {
-    outline: 3px solid #00D4FF;
-    transform: scale(1.05);
-}
-}
-/* AJUSTES PARA DIFERENTES TAMAÑOS DE PANTALLA */
-
-/* Pantallas muy pequeñas (celulares compactos) */
-@media (max-width:480px){
-  body {
-    font-size:16px;
-  }
-
-  nav li {
-    display:block;
-    margin:10px 0;
-  }
+.mascota-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Celulares normales */
-@media (max-width:600px){
-  h1 {
-    font-size:22px;
-  }
+.card-mascota {
+    width: 250px;
+    padding: 20px;
 
-  form, section, article {
-    width:90%;
-    margin:auto;
-  }
+    background: var(--color-card);
+    color: white;
+
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    transition: 0.3s;
 }
 
-/* Tablets */
-@media (max-width:768px){
-  .info {
-    flex-direction:column;
-    align-items:center;
-  }
-
-  section, article {
-    width:80%;
-    margin:auto;
-  }
+.card-mascota:hover {
+    transform: translateY(-10px);
 }
 
-/* Tablets grandes */
-@media (max-width:900px){
-  form, section, article {
-    width:70%;
-    margin:auto;
-  }
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primario);
+    color: white;
 }
 
-/* Laptops */
-@media (max-width:1024px){
-  body {
-    font-size:20px;
-  }
-}
+/* ===== RESPONSIVE ===== */
+@media (max-width:600px) {
 
-/* Pantallas grandes */
-@media (min-width:1200px){
-  main {
-    max-width:1200px;
-    margin:auto;
-  }
+    .equipo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-abajo {
+        font-size: 16px;
+    }
+
 }

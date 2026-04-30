@@ -1,115 +1,432 @@
-/* Estilos generales */
-body {
-    background: linear-gradient(to bottom, #b3e5fc, #e1f5fe);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    color: #003366;
+/* ===== TIPOGRAFÍA PERSONALIZADA ===== */
+/* Importo una fuente personalizada para darle identidad única al sitio */
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.otf') format('opentype');
 }
 
-/* Reset */
+/* ===== VARIABLES GLOBALES ===== */
+/* Uso variables para mantener colores consistentes y fáciles de cambiar */
+:root {
+    --color-primario: #073d67ed; 
+    --color-secundario: #154b62ec;
+    --color-terciario: #15344df0;
+    --color-clarito: #055c9e8b;
+    --color-texto: #f5f9fcf0;
+    --color-oscuro: #0f273af0;
+
+    --color-navbar: rgba(11, 60, 93, 0.416);
+    --color-footer: #003f5c;
+}
+
+/* ===== RESET GENERAL ===== */
+/* Quito márgenes y padding por defecto para evitar inconsistencias entre navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Logo */
+/* ===== HEADER / NAVBAR ===== */
+/* Diseño flexible para acomodar logo y menú */
+.navbar,
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    height: 70px;
+
+    /* Fondo degradado para estilo moderno */
+    background: linear-gradient(90deg, #002b50, #004080);
+
+    color: var(--color-texto);
+
+    /* Sticky para que se quede arriba al hacer scroll */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* ===== LOGO ===== */
+/* Tamaño controlado y animación para hacerlo interactivo */
 .logo {
-    width: 70px;
-    border-radius: 50%;
-    border: 2px solid #0066cc;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.2); /* Efecto visual al pasar el mouse */
 }
 
 .logo-text {
-    font-weight: bold;
-    font-size: 24px;
-    margin-left: 12px;
-    color: #004080;
-    letter-spacing: 1px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
 }
 
-/* Lista de enlaces */
-.links {
-    list-style: none;
-    margin: 20px 0;
-    padding: 0;
+
+nav{
+    background-color: #097aaa00;
+    padding: 1rem 2rem;
+   
+}
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+/* Barra de navegación */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    font-size: 19px;
+    background: #097aaa5a;  
+    color:#F5F9FC;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.3);
+}
+
+.logo-text {
+    font-weight:normal;
+    font-size:20px;
+    margin-left:10px;
+}
+
+.logo-container {
+    display:flex;
+    align-items:center;
+}
+
+.links{
     display: flex;
-    gap: 20px;
+    gap: 2rem;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+.links a{
+    color:#f4f6f5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.links a:hover{
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+/* Configuración del cuerpo */
+body {
+    font-family: 'coolvetica';
+    font-weight: normal;
+    letter-spacing: 0.7px; 
+    background-image: url("fondo_scishark.webp");
+    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color:#1a1a1a;
+    transition: background-color 0.4s, color 0.4s;
+}
+/* ===== CONTENEDOR PRINCIPAL ===== */
+/* Centra contenido y lo organiza en columna */
+.energias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
 }
 
-.links li a {
-    text-decoration: none;
-    background-color: #0066cc;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+/* Contenedor de tarjetas */
+.energia-botones {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Responsive automático */
+    max-width: 1100px;
+}
+/* ===== CONTENIDO DETALLADO (NUEVAS SECCIONES) ===== */
+
+/* Contenedor de los bloques dentro de la tarjeta */
+.contenido-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Para que algunos bloques ocupen todo el ancho */
+.bloque.full {
+    grid-column: span 2;
+}
+
+/* Títulos de cada bloque */
+.bloque h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00D4FF;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.links li a:hover {
-    background-color: #004080;
-    transform: scale(1.05);
+/* Texto dentro de los bloques */
+.bloque p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
-/* Texto descriptivo */
-p {
-    margin: 15px 0;
-    max-width: 800px;
-    font-size: 18px;
-}
-.energia-section {
-    padding: 40px;
-    text-align: center;
-    background: #0f172a;
-    color: white;
+/* Listas */
+.bloque ul {
+    padding-left: 18px;
 }
 
-.energia-section h2 {
+.bloque li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* ===== ENCABEZADO DE TARJETA ===== */
+
+.encabezado {
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.titulo {
     font-size: 28px;
+    color: var(--color-texto);
 }
 
-/* PDF principal */
-.pdf-principal {
-    margin-bottom: 30px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+.subtitulo {
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-/* Contenedor de links */
-.pdf-links {
+/* ===== SUBTÍTULO GENERAL ===== */
+
+.header-subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ccc;
+}
+/* ===== LAYOUT PRINCIPAL DE LA SECCIÓN ===== */
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===== COLUMNA IZQUIERDA ===== */
+
+.columna-izquierda {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-/* Tarjetas */
-.card {
-    background-color: #0f172a;
-    padding: 20px 30px;
-    border-radius: 15px;
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bloque.full {
+        grid-column: span 1;
+    }
+}
+/* ===== TARJETAS PRINCIPALES ===== */
+/* Diseño moderno tipo glassmorphism */
+.energia-item {
+    width: 280px;
+    min-height: 200px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+    color: var(--color-texto);
+
+    border-radius: 20px;
+
+    /* Efecto vidrio */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    /* Sombra */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+    transition: all 0.35s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brillo animado interno */
+.energia-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* Hover pro */
+.energia-item:hover {
+    transform: translateY(-10px) scale(1.05);
+
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.6),
+        0 0 20px rgba(0, 212, 255, 0.5);
+
+    border: 1px solid rgba(0,212,255,0.6);
+}
+
+.energia-item:hover::before {
+    opacity: 1;
+}
+
+/* Iconos */
+.energia-item i {
+    font-size: 32px;
+    color: #00D4FF;
+}
+
+/* Texto */
+.energia-item p {
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+/* ===== TARJETAS DE INFORMACIÓN ===== */
+/* Bloques más grandes para contenido detallado */
+.tarjeta-energia {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    color: var(--color-texto);
+
+    /* Animación de entrada */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: aparecerTarjeta 0.8s ease forwards;
+}
+
+.tarjeta-energia p {
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 /* Hover */
-.card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.5);
+.tarjeta-energia:hover {
+    transform: scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.6),
+        0 0 20px rgba(0,212,255,0.4);
+}
+
+/* Animación */
+@keyframes aparecerTarjeta {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== EFECTOS POR TIPO DE ENERGÍA ===== */
+/* Diferencio cada tarjeta según su tipo */
+.energia-item:nth-child(1):hover {
+    box-shadow: 0 20px 40px rgba(0, 191, 255, 0.5);
+}
+
+.energia-item:nth-child(2):hover {
+    box-shadow: 
+        0 20px 40px rgba(0, 150, 80, 0.5),
+        0 0 20px rgba(117, 226, 90, 0.6);
+}
+
+.energia-item:nth-child(3):hover {
+    box-shadow: 0 20px 40px rgba(255, 100, 0, 0.5);
+}
+/* ===== CONTENEDOR DE TEXTO PRINCIPAL ===== */
+.energias p {
+    max-width: 900px;
+    margin: 15px auto;
+    text-align: center;
+
+    /*  FONDO chidori */
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+
+    /* lectura perrona */
+    color: #ffffff;
+    line-height: 1.8;
+    font-size: 16px;
+
+    backdrop-filter: blur(10px);
+}
+
+/* ===== TITULO  ===== */
+.energias h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+/* Pie de página */
+footer {
+    text-align:center;
+    padding:20px;
+    background-color:var(--color-primario);
+    color:white;
+    margin-top: 10px; 
 }

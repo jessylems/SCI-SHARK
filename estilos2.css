@@ -1,69 +1,359 @@
+/* ===== FUENTE ===== */
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.otf') format('opentype');
+}
 
-body {
+/* ===== VARIABLES ===== */
+:root {
+    --color-primario: #073d67ed; 
+    --color-secundario: #154b62ec;
+    --color-terciario: #15344df0;
+    --color-clarito: #055c9e8b;
+    --color-texto: #f5f9fcf0;
+    --color-oscuro: #0f273af0;
+
+    --color-navbar: rgba(11, 60, 93, 0.416);
+    --color-footer: #003f5c;
+}
+
+/* ===== RESET ===== */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #001f3f, #003366);
-    color: white;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-header {
-    background: #2b657f;
-    padding: 20px;
-    text-align: left;
+.logo:hover {
+    transform: scale(1.3);
 }
 
+.logo-text {
+    font-weight:normal;
+    font-size:20px;
+    margin-left:10px;
+}
+
+.logo-container {
+    display:flex;
+    align-items:center;
+}
+
+/* Contenedor interno opcional */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav{
+    background-color: #097aaa00;
+    padding: 1rem 2rem;
+   
+}
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+/* Barra de navegación */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    font-size: 19px;
+    background: #097aaa5a;  
+    color:#F5F9FC;
+}
+
+/* Lista de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Links */
 nav a {
-    color: #6ec3d4;
-    margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
     color: white;
 }
 
-section {
-    padding: 40px;
+/* Hover simple */
+nav a:hover {
+    text-decoration: underline;
+}
+/* Configuración del cuerpo */
+body {
+    font-family: 'coolvetica';
+    font-weight: normal;
+    letter-spacing: 0.7px; 
+    background-image: url("fondo_scishark.webp");
+    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color:#1a1a1a;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    color: #083d56;
+}
+
+.hero h2 {
+    font-size: 28px;
+    color: #014c6f;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+/* ===== BOTÓN LOGIN ===== */
+.btn-login {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: var(--color-primario);
+    color: #A2B5AF;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #003f5c;
+    transform: translateY(-5px);
+}
+
+/* ===== CARDS ===== */
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 10%;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #3582c1c7;
+    padding: 25px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 6px 13px rgba(20, 20, 20, 0.5);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* ===== FORMULARIO ===== */
+.tenedor {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    transition: 0.3s;
+}
+
+.tenedor:hover {
+    transform: translateY(-5px);
+}
+
+.tenedor input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.tenedor button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #00D4FF, #0077B6);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tenedor button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== VIDEOS ===== */
+#videos {
+    padding: 50px 20px;
     text-align: center;
 }
 
 .video-container {
-    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-.tips-box {
-    background: rgba(0, 212, 255, 0.1);
-    padding: 20px;
+.video {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.video:hover {
+    transform: translateY(-8px);
+}
+
+.video iframe {
+    width: 100%;
+    height: 160px;
     border-radius: 10px;
-    display: inline-block;
 }
 
-form {
-    margin-top: 20px;
+.links{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #043673;
+        flex-direction: column;
+        clip-path: circle(0px at 90% -10%);
+        pointer-events: none;
+    }
+    .links.active{
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .links li{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    .links.active li {
+        opacity: 1;
+        transform: translateY(0)
+    }
+    .links li:nth-child(1) {transition-delay: 0.1s;}
+     .links li:nth-child(2) {transition-delay: 0.2s;}
+      .links li:nth-child(3) {transition-delay: 0.3s;}
+       .links li:nth-child(4) {transition-delay: 0.4s;}
+
+
+/* ===== BOTÓN MENÚ (OCULTO POR DEFECTO) ===== */
+.menubur {
+    display: none;
+    background: none;
+    border: none;
+    color: #f4f6f5;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-input[type="file"] {
-    margin-top: 10px;
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+
+    background-color: var(--color-primario); /* ya corregido */
     color: white;
 }
 
-button {
-    background: #00d4ff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+/* ===== MENSAJES JS (para tu script) ===== */
+#mensajes {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
 }
 
-button:hover {
-    background: #0099cc;
+/* ===== BARRA DE PROGRESO ===== */
+.barra-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
 }
 
-footer {
-    background: #2b657f;
-    padding: 15px;
+.barra {
+    height: 100%;
+    width: 0%;
+    background: #00D4FF;
+    transition: width 0.3s;
+}
+
+/* ===== PREVIEW ARCHIVO ===== */
+.preview {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* ===== LISTA DE TRABAJOS ===== */
+.lista-trabajos {
+    padding: 40px 20px;
     text-align: center;
 }
 
+.trabajo {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 400px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menubur {
+        display: block;
+    }
+}

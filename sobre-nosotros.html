@@ -2,191 +2,135 @@
 <html lang="es">
 
 <head>
+    <!-- Configuración básica -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- configuracion basica del documento -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título -->
+    <title>Tipos de Energía | SCI SHARK</title>
 
-<!-- conexion al archivo css -->
-<link rel="stylesheet" href="about.css">
+    <!-- Icono -->
+    <link rel="icon" type="image/webp" href="scishark.webp">
 
-<title>Nuestro equipo - SCI SHARK</title>
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="about.css">
 </head>
-
 
 <body>
 
-<!-- titulo principal de la pagina -->
-<header>
+    <header class="navbar">
+        <figure class="logo-container">
+            <img src="scishark.webp.webp" alt="Logo" class="logo">
+            <figcaption class="logo-text">SCI SHARK</figcaption>
+        </figure>
+        <nav>
+        
 
-<h1>El equipo de desarrollo de scishark </h1>
-
-<!-- seccion del logo de la pagina -->
-<div class="logo-container">
-<img src="scishark.webp" alt="La mascota de Sci Shark" class="logo">
-<span class="logo-text">SCI SHARK</span>
-</div>
-
-<h2>Sobre nosotros</h2>
-
+            <ul class="links" id="linkes">
+                <li><a href="practicas.html">Prácticas</a></li>
+                <li><a href="experimentos.html">Experimentos</a></li>
+                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                <li><a href="tipos de energia.html">Energías</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
+<!-- ===== TITULO PRINCIPAL ===== -->
+<section class="header">
+    <h1>Conoce a nuestro equipo de desarrolladores</h1>
+</section>
 
-<!-- contenido principal -->
+<!-- ===== MAIN ===== -->
 <main>
 
-<!-- seccion donde se muestran los integrantes del equipo -->
-<section class="equipo">
+    <!-- EQUIPO -->
+    <section class="equipo">
+        <h2 class="title">Nuestro equipo de desarrolladores</h2>
 
-<h2 class="title">Nuestro equipo de desarrolladores</h2>
-<input type="text" id="buscador" placeholder="Buscar integrante...">
+        <div class="equipo-container">
 
-<button data-filtro="todos">Todos</button>
-<button data-filtro="programador">Programadores</button>
+            <article class="miembros-equipo">
+                <img src="perfil.webp" alt="Foto de Jesús Lemus">
+                <h3>Jesús Eduardo Lemus Lopez</h3>
+                <p class="title">Programador</p>
+                <p class="contenido">
+                    Líder del equipo y programador principal del sitio Sci Shark.
+                </p>
+            </article>
 
-<div class="equipo-container">
+            <article class="miembros-equipo">
+                <img src="perfil.webp" alt="Foto de Brenda Valeria">
+                <h3>Brenda Valeria Montaño Montenegro</h3>
+                <p class="title">Programadora</p>
+                <p class="contenido">
+                    Encargada del diseño visual y apoyo en el desarrollo de páginas clave.
+                </p>
+            </article>
 
+            <article class="miembros-equipo">
+                <img src="perfil.webp" alt="Foto de Karol Gonzales">
+                <h3>Karol Gonzales Cortes</h3>
+                <p class="title">Programadora</p>
+                <p class="contenido">
+                    Apoyo en estructura del sitio y toma de decisiones del equipo.
+                </p>
+            </article>
 
-<!-- miembro del equipo: jesus -->
-<div class="miembros-equipo">
+        </div>
+    </section>
 
-<img src="perfil.webp" alt="Foto de Jesús Lemus">
+    <!-- PROPOSITO GENERAL -->
+    <section class="proposito">
+        <h2>Este es un sitio con fines académicos</h2>
+        <div class="text-abajo">
+            <p>
+                Esta página fue creada para divulgar la ciencia y facilitar la presentación de proyectos escolares.
+                Aquí los estudiantes pueden mostrar sus prácticas, experimentos y aprendizajes.
+            </p>
+        </div>
+    </section>
 
-<h3>Jesús Eduardo Lemus Lopez</h3>
+    <!-- PROPOSITO SCI SHARK -->
+    <section class="proposito">
+        <h2>¿Cuál es el propósito de SCI SHARK?</h2>
 
-<p class="tittle">Programador</p>
+        <div class="text-abajo">
+            <p>SCI SHARK es una plataforma educativa creada por estudiantes para estudiantes.</p>
+            <p>Su objetivo es compartir conocimiento de forma visual, clara y dinámica.</p>
+            <p>Buscamos hacer la ciencia más interesante y accesible.</p>
+        </div>
+    </section>
 
-<p class="contenido">
-Líder del equipo y programador en varias de las páginas de este sitio.
-</p>
+    <!-- MASCOTA -->
+    <section class="mascota">
+        <h2>¿Por qué elegimos un tiburón? 🦈</h2>
 
-</div>
+        <div class="mascota-cards">
+            <article class="card-mascota">
+                <h3>Pasión</h3>
+                <p>Representa fuerza, inteligencia y curiosidad.</p>
+            </article>
 
+            <article class="card-mascota">
+                <h3>Conocimiento</h3>
+                <p>Simboliza dominar el aprendizaje científico.</p>
+            </article>
 
-<!-- miembro del equipo: brenda -->
-<div class="miembros-equipo">
+            <article class="card-mascota">
+                <h3>Identidad</h3>
+                <p>Nos da una imagen única y moderna.</p>
+            </article>
+        </div>
+    </section>
 
-<img src="perfil.webp" alt="Foto de Brenda Valeria">
-
-<h3>Brenda Valeria Montaño Montenegro</h3>
-
-<p class="tittle">Programadora</p>
-
-<p class="contenido">
-Miembro del equipo con gran relevancia en el diseño y creación de nuestra mascota
-y programadora de páginas necesarias del sitio.
-</p>
-
-</div>
-
-
-<!-- miembro del equipo: karol -->
-<div class="miembros-equipo">
-
-<img src="perfil.webp" alt="Foto de Karol Gonzales">
-
-<h3>Karol Gonzales Cortes</h3>
-
-<p class="tittle">Programadora</p>
-
-<p class="contenido">
-Programadora con gran relevancia en las decisiones del equipo.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- mensaje final del sitio -->
-<section class="proposito">
-
-<h2>Este es un sitio con fines académicos</h2>
-
-<div class="text-abajo">
-<p>
-Esta página fue creada con el propósito de divulgar la ciencia y facilitar la visualización de trabajos escolares. 
-Su objetivo es que los estudiantes puedan subir, organizar y presentar proyectos, 
-prácticas y experimentos realizados en clase, compartiendo conocimiento de forma clara, ordenada y accesible para todos.
-</p>
-</div>
-
-</section>
-
-<section class="proposito">
-
-<h2>¿Cuál es el propósito de SCI SHARK?</h2>
-
-<div class="text-abajo">
-<p>
-SCI SHARK nace como una plataforma educativa enfocada en la divulgación de la ciencia,
-creada por estudiantes para estudiantes. Nuestro objetivo principal es ofrecer un espacio
-donde el conocimiento pueda compartirse de forma clara, organizada y accesible.
-</p>
-
-<p>
-Buscamos que los alumnos puedan subir sus prácticas, experimentos y proyectos escolares,
-permitiendo que otros aprendan de ellos, generando así una comunidad colaborativa donde
-la curiosidad y el aprendizaje sean el motor principal.
-</p>
-
-<p>
-Creemos que la ciencia no debe ser complicada ni aburrida, sino una experiencia dinámica,
-visual e interesante para todos.
-</p>
-</div>
-
-<!-- NUEVAS CARDS SOBRE LA MASCOTA -->
-<section class="mascota">
-
-<h2>¿Por qué elegimos un tiburón? 🦈</h2>
-
-<div class="mascota-cards">
-
-<div class="card-mascota">
-<h3>Pasión por los tiburones</h3>
-<p>
-Elegimos un tiburón como mascota porque sentimos una gran admiración por estos animales.
-Representan fuerza, inteligencia y adaptación, cualidades que buscamos reflejar en nuestro proyecto.
-</p>
-</div>
-
-<div class="card-mascota">
-<h3>Símbolo de conocimiento</h3>
-<p>
-Así como los tiburones dominan su entorno, queremos que los estudiantes dominen el conocimiento
-científico y desarrollen confianza en sus habilidades.
-</p>
-</div>
-
-<div class="card-mascota">
-<h3>Un enfoque diferente</h3>
-<p>
-Queríamos una identidad única. El tiburón rompe con lo típico y transmite una imagen fuerte,
-moderna y memorable para nuestra plataforma.
-</p>
-</div>
-
-</div>
-
-</section>
-
-</section>
 </main>
 
-
-<!-- pie de pagina -->
+<!-- ===== FOOTER ===== -->
 <footer>
-
-<p>© 2026 SCI SHARK - Plataforma estudiantil</p>
-
+    <small>Proyecto científico escolar — Sci Shark 2026</small>
 </footer>
 
-
+<script src="BURGER.js"></script>
 </body>
-<script src="about.js"></script>
 </html>
