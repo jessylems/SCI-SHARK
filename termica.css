@@ -1,144 +1,209 @@
-:root {
-    --azul-oscuro: #002b50;
-    --azul-medio: #004080;
-    --azul-claro: #00f7ff;
-    --blanco: #ffffff;
-
-    --glass: rgba(255, 255, 255, 0.08);
-    --borde-glass: rgba(255, 255, 255, 0.15);
-
-    --sombra: 0 10px 30px rgba(0,0,0,0.4);
-    --neon: 0 0 10px rgba(0,247,255,0.6);
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('coolvetica.otf') format('opentype');
 }
 
+/* ===== VARIABLES ===== */
+:root {
+    --color-primario: #073d67ed;
+    --color-secundario: #154b62ec;
+    --color-terciario: #15344df0;
+    --color-clarito: #055c9e8b;
+    --color-texto: #f5f9fcf0;
+    --color-oscuro: #0f273af0;
+
+    --color-card: rgba(0,0,0,0.6);
+    --color-glass: rgba(0,0,0,0.5);
+}
+/* Reset básico para evitar estilos raros del navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Configuración del cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'coolvetica';
+    font-weight: normal;
+    letter-spacing: 0.7px; 
     background-image: url("fondo_scishark.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #eaeaea;
+    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color:#1a1a1a;
+    transition: background-color 0.4s, color 0.4s;
 }
 
-/* HEADER */
-header {
+/* ===== NAVBAR ===== */
+/* Barra superior con logo y links */
+.navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 40px;
-    background: linear-gradient(90deg, var(--azul-oscuro), var(--azul-medio));
-    color: white;
-    box-shadow: var(--sombra);
-    backdrop-filter: blur(10px);
+    align-items: center;
+
+    padding: 15px 10%;
+    font-size: 19px;
+
+    background: #097aaa5a;
+    color: #F5F9FC;
 }
 
-/* NAV */
-.links {
+/* Contenedor interno opcional */
+.nav-container {
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Lista de navegación */
+nav ul {
     list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.links a {
-    color: #f4f6f5;
+/* Links */
+nav a {
     text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
+    color: white;
 }
 
-.links a:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
+/* Hover simple */
+nav a:hover {
+    text-decoration: underline;
 }
 
-/* LOGO */
+.links{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #043673;
+        flex-direction: column;
+        clip-path: circle(0px at 90% -10%);
+        pointer-events: none;
+    }
+    .links.active{
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .links li{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    .links.active li {
+        opacity: 1;
+        transform: translateY(0)
+    }
+    .links li:nth-child(1) {transition-delay: 0.1s;}
+     .links li:nth-child(2) {transition-delay: 0.2s;}
+      .links li:nth-child(3) {transition-delay: 0.3s;}
+       .links li:nth-child(4) {transition-delay: 0.4s;}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+/* Grid: izquierda (calculadora) y derecha (contenido) */
+.layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 30px;
+}
 .logo {
-    height: 50px;
-    transition: 0.3s;
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.3);
 }
 
-/* LAYOUT */
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 0 20px;
+.logo-text {
+    font-weight:normal;
+    font-size:20px;
+    margin-left:10px;
 }
 
-/* IZQUIERDA */
-.columna-izquierda {
-    display: flex;
-    flex-direction: column;
+.logo-container {
+    display:flex;
+    align-items:center;
 }
-
+/* ===== TÍTULO ===== */
 .main-title {
-    font-size: 3rem;
-    color: var(--azul-claro);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--blanco);
     text-shadow: var(--neon);
-    margin-bottom: 30px;
 }
 
-/* CALCULADORA */
+/* ===== CALCULADORA ===== */
 .calculadora {
-    background: linear-gradient(145deg, rgba(10, 20, 60, 0.9), rgba(0, 80, 150, 0.6));
-    padding: 30px;
+    background: var(--glass);
+    padding: 25px;
+
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255,255,255,0.15);
-    animation: slideInLeft 0.8s ease;
-    transition: 0.4s;
-    color: #fff;
+    border: 1px solid var(--borde-glass);
+
+    backdrop-filter: blur(15px);
 }
 
-.calculadora:hover {
-    transform: translateY(-6px);
+/* Subtítulos */
+.calc-section h4 {
+    color: var(--azul-claro);
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
+/* Inputs */
 .calculadora input {
     width: 100%;
-    padding: 14px;
-    margin: 12px 0;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    font-size: 15px;
+    padding: 10px;
+
+    margin: 5px 0 15px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--borde-glass);
+    border-radius: 8px;
+
+    color: white;
 }
 
-.calculadora input:focus {
-    border-color: #00f7ff;
-    box-shadow: 0 0 10px rgba(0,247,255,0.7);
-}
-
+/* Botón */
 .calculadora button {
     width: 100%;
-    padding: 14px;
-    margin-top: 10px;
-    background: linear-gradient(90deg, #004080, #00f7ff);
-    color: white;
+    padding: 12px;
+
+    background: linear-gradient(90deg, var(--azul-medio), var(--azul-claro));
     border: none;
-    border-radius: 12px;
-    cursor: pointer;
+    border-radius: 8px;
+
+    color: white;
     font-weight: bold;
+
+    cursor: pointer;
     transition: 0.3s;
 }
 
+/* Efecto hover */
 .calculadora button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0,247,255,0.8);
+    transform: translateY(-2px);
+    box-shadow: var(--neon);
+}
+
+/* ===== PANEL DERECHO ===== */
+.info-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* TARJETA */
@@ -166,31 +231,74 @@ header {
     box-shadow: var(--neon);
 }
 
-/* COLORES */
-.ventaja { border-left: 4px solid #00ff9c; }
-.desventaja { border-left: 4px solid #ff4d4d; }
-.alternativa { border-left: 4px solid #00f7ff; }
 
-/* FOOTER */
-footer {
-    background: var(--azul-oscuro);
+/* Celdas */
+.tabla-comparativa th,
+.tabla-comparativa td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--borde-glass);
+}
+
+/* Encabezados */
+.tabla-comparativa th {
+    background: rgba(0, 247, 255, 0.1);
+    color: var(--azul-claro);
+
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Colores por tipo */
+.bloque-ventaja { border-left: 5px solid #00ff9c; }
+.bloque-desventaja { border-left: 5px solid #ff4d4d; }
+.bloque-alternativa { border-left: 5px solid var(--azul-claro); }
+
+/* Quitar borde final */
+.tabla-comparativa tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido-academico {
+    background: rgba(0, 0, 0, 0.2);
     padding: 30px;
-    margin-top: 50px;
+
+    border-radius: 20px;
+    border: 1px solid var(--borde-glass);
 }
 
-/* ANIMACIONES */
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-40px); }
-    to { opacity: 1; transform: translateX(0); }
+.contenido-academico h2 {
+    color: var(--azul-claro);
+    margin-bottom: 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+.contenido-academico h3 {
+    margin: 25px 0 10px;
+    color: #fff;
+
+    border-left: 3px solid var(--azul-claro);
+    padding-left: 15px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+.contenido-academico p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+
+    background-color: var(--color-primario); /* ya corregido */
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+/* Cuando la pantalla es pequeña, todo se pone en una sola columna */
+@media (max-width: 1000px) {
     .layout {
         grid-template-columns: 1fr;
     }
