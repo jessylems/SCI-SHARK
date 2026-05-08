@@ -9,6 +9,8 @@
     --color-terciario: #569bd4f0;
     --color-texto: #f5f9fc;
     --color--oscuro:#203b51d7;
+    --color-menu:#7BBCE0;
+    --color-cards-individuales: #5793b977;
 }
 
 *{
@@ -55,7 +57,7 @@ margin: 0 auto;
 
 /*menu color*/
 .menubur{
-    color:  var(--color-terciario);
+    color: var(--color-menu);
    
 }
 .links{
@@ -65,7 +67,7 @@ margin: 0 auto;
     transition: all 0.3s ease;
 }
 .links a{
-    color:#f4f6f5;
+    color: var(--color-texto);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -78,7 +80,7 @@ margin: 0 auto;
     display: none;
     background: none;
     border: none;
-    color: #f4f6f5;
+    color: var(--color-texto);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -92,7 +94,7 @@ margin: 0 auto;
         top: 60px;
         left: 0;
         width: 100%;
-        background-color: #043673;
+        background-color: var(--color-menu);
         flex-direction: column;
         clip-path: circle(0px at 90% -10%);
         pointer-events: none;
@@ -136,8 +138,9 @@ margin: 0 auto;
     padding:15px 10%;
     font-size: 19px;
     background: #097aaa5a;  
-    color:#F5F9FC;
+    color: var(--color-texto);
 }
+
 
 .logo {
     width: 60px;
@@ -168,7 +171,7 @@ nav ul {
 
 nav a {
     text-decoration:none;
-    color:white;
+    color: var(--color-texto);
 }
 
 nav a:hover {
@@ -198,6 +201,8 @@ nav a:hover {
     margin:16px auto;
     color: var(--color-primario);
 }
+.h4 embed 
+{padding: 25px;}
 
 /* Botones */
 .btn-login {
@@ -205,7 +210,7 @@ nav a:hover {
     margin-top:20px;
     padding:12px 30px;
     background-color:var(--color-secundario);
-    color:#f4f6f5;
+    color: var(--color-texto);
     text-decoration:none;
     border-radius:8px;
     width: 170px;
@@ -246,14 +251,8 @@ nav a:hover {
     transform: translateY(-10px);
 }
 
-/* Pie de página */
-footer {
-    text-align:center;
-    padding:20px;
-    background-color:var(--color-primario);
-    color:white;
-    margin-top: 10px; 
-}
+
+
 
 .cuenta-container {
     position: absolute;
@@ -272,7 +271,7 @@ footer {
     margin: 40px 0 10px 10%; 
     padding: 10px 20px;
     background-color: var(--color-primario);
-    color: white;
+    color:  var(--color-texto);
     border-radius: 8px;
     cursor: pointer;
     width: fit-content;
@@ -283,32 +282,334 @@ footer {
     background-color: var(--color-secundario);
 }
 
-/* Cambiar colores a modo oscuro */
-body:has(#modo-check:checked) {
-    background-color: #2f5e91;
-    background-image:url(fondo_scishark.webp);
-    color: white;
+/* BUSCADOR */
+.search {
+    text-align: center;
+    margin: 20px;
+
 }
 
-/* Aplicar color negro al texto :v */
-body:has(#modo-check:checked) .hero h1,
-body:has(#modo-check:checked) .hero h2,
-body:has(#modo-check:checked) .hero p,
-body:has(#modo-check:checked) .card p,
-body:has(#modo-check:checked) .card h3,
-body:has(#modo-check:checked) .navbar,
-body:has(#modo-check:checked) .navbar nav a, 
-body:has(#modo-check:checked) .logo-text,   
-body:has(#modo-check:checked) .card,
-body:has(#modo-check:checked) .btn-login {
-    color: rgba(15, 4, 4, 0.874) !important; 
+.search input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--color-clarito);
+    background-color: var(--color-clarito);
+    color:var(--color-texto);
+
 }
+.search input::placeholder {
+    color: var(--color--oscuro);
+    font-weight: bold;
+}
+
+.search input:focus {
+    outline: 3px solid var(--color-texto);
+}
+
+.search-box {
+    position: relative;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 20px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--color-secundario);
+}
+/* CONTENEDOR DE TARJETAS EXPERIMENTOS */
+.tarjeta-espacio {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* más pequeñas */
+    gap: 60px; /* más separación entre tarjetas */
+    padding: 40px;
+}
+
+
+.cardsinfo {
+  width: 280px;              /* Ajusta el ancho de cada tarjeta */
+}
+
+
+/*experimentos tarjetas parte principal*/
+
+
+.exptag{
+     background-color:#5793b977;
+    padding: 20px; 
+    border-radius: 15px;
+    margin: 5px auto;
+    margin-bottom: 5px;
+    width: 1300px;
+    color: var(--color-oscuro);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     
+}
+
+.exptag:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+.exptag h2{
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--color-terciario);
+    text-align: left;
+}
+
+.exptag h3{
+    font-size: 22px;
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+/*  texto  */
+.exptag p{
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.exptag figure{
+margin: 30px auto;
+text-align: center;
+}
+
+.exptag figure img{
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* TARJETAS INDIVIDUALES */
+.cardsinfo {
+    background-color: var(--color-cards-individuales);
+    padding: 20px; /* menos padding interno para que se vean compactas */
+    border-radius: 20px;
+    color: var(--color-oscuro);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardsinfo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* TAGS DE CATEGORÍA */
+.tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--color-texto);
+    margin-bottom: 10px;
+}
+
+/* Colores por categoría */
+.tag.fisica { background-color: #4a90e2; }
+.tag.quimica { background-color: #e94e77; }
+.tag.biologia { background-color: #50b848; }
+
+/* BOTÓN */
+.btn-primario {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: var(--color-oscuro);
+    color: var(--color-texto);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primario:hover {
+    background-color: var(--color--oscuro);
+}
+
+/*CAMBIO DE MODO*/ 
+
+/* Funcionalidad modo oscuro CSS */
+#modo-check {
+    display: none;
+}
+
+/* Botón */
+.btn-toggle {
+    display: block;
+    margin: 40px 0 10px 10%; 
+    padding: 10px 20px;
+    background-color: var(--color-oscuro);
+    color: var(--color-texto);
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.btn-toggle:hover {
+    background-color: var(--color-secundario);
+}
+
+/* activar modo oscuro */
+body:has(#modo-check:checked) {
+    background-color: #2f5e91;
+    background-image: url("fondo_scishark.webp");
+}
+
+/*  TEXTO NEGRO */
+body:has(#modo-check:checked) h1,
+body:has(#modo-check:checked) h2,
+body:has(#modo-check:checked) p,
+body:has(#modo-check:checked) a,
+body:has(#modo-check:checked) h3,
+body:has(#modo-check:checked) span,
+body:has(#modo-check:checked) a,
+body:has(#modo-check:checked) div,
+body:has(#modo-check:checked) i,
+body:has(#modo-check:checked) input
+
+ {
+    color: #0f0404df !important;
+}
+
+/* CARDS OSCURAS */
+body:has(#modo-check:checked) .card {
+    background-color: #10385881;
+    color: white;
+}
 
 body:has(#modo-check:checked) .card {
     background: #1d466799;
 }
+/*                                                                                                           energia hidraulica                                                                       */
 
+.energia{
+     background-color:#5793b977;
+    padding: 25px; 
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 900px;
+    color: var(--color-oscuro);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.energia:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+.energia h2{
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--color-terciario);
+    text-align: left;
+}
+
+.energia h3{
+    font-size: 22px;
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+/*  texto  */
+.energia p{
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.energia figure{
+margin: 20px auto;
+text-align: center;
+}
+
+.energia figure img{
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.oculto{
+    display:none
+}
+#lista-exp{
+      margin-top: 20px;
+  text-align: left;
+  max-width: 500px;
+  margin-inline: auto;
+  background: #eaf4fb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.3s ease;
+}
+#lista-exp.activo{
+    max-height: 500px;
+    padding: 20px;
+}
+#btn-experimentos{
+   display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    background-color:var(--color-secundario);
+    color:#f4f6f5;
+    text-decoration:none;
+    border-radius:8px;
+    width: 170px;
+    height: 50px;
+    transition: 0.2s;
+}
+#btn-experimentos:hover{
+        transform: translateY(-5px);
+}
+.energia figcaption{
+     font-size: 14px;
+    color: #333;
+    margin-top: 8px;
+}
+.experimentos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experimentos li {
+  margin: 12px 0;
+}
+
+.experimentos a {
+  text-decoration: none;
+  color: var(--color-terciario);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.experimentos a:hover {
+  color: var(--color-secundario);
+  text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+    text-align:center;
+    padding:20px;
+    background-color:var(--color-primario);
+    color: var(--color-texto);
+    margin-top: 10px; 
+}
 /* tablets y celuuus */
 @media (max-width: 1024px) {
     .hero h1 {
