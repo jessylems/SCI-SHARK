@@ -1,28 +1,95 @@
-/* ===== FUENTE ===== */
+/* =========================================
+   FUENTE
+========================================= */
 @font-face {
     font-family: 'Coolvetica';
     src: url('coolvetica.otf') format('opentype');
 }
 
-/* ===== VARIABLES ===== */
+/* =========================================
+   VARIABLES GLOBALES
+========================================= */
 :root {
-    --color-primario: #073d67ed; 
+    --color-primario: #073d67ed;
     --color-secundario: #154b62ec;
     --color-terciario: #15344df0;
     --color-clarito: #055c9e8b;
     --color-texto: #f5f9fcf0;
     --color-oscuro: #0f273af0;
+    --color-accent: #00D4FF;
 
     --color-navbar: rgba(11, 60, 93, 0.416);
     --color-footer: #003f5c;
 }
 
-/* ===== RESET ===== */
+/* =========================================
+   RESET
+========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Coolvetica', sans-serif;
 }
+
+/* =========================================
+   BODY
+========================================= */
+body {
+    letter-spacing: 0.7px;
+    background-image: url("fondo_scishark.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--color-texto);
+    line-height: 1.6;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar,
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 10%;
+    height: 80px;
+
+    background: #097aaa5a;
+    backdrop-filter: blur(10px);
+
+    color: var(--color-texto);
+    top: 0;
+    z-index: 1000;
+
+    font-size: 19px;
+}
+
+/* =========================================
+   NAV CONTAINER
+========================================= */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     width: 60px;
     height: auto;
@@ -30,85 +97,78 @@
 }
 
 .logo:hover {
-    transform: scale(1.3);
+    transform: scale(1.15);
 }
 
 .logo-text {
-    font-weight:normal;
-    font-size:20px;
-    margin-left:10px;
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+    font-weight: normal;
 }
 
-.logo-container {
-    display:flex;
-    align-items:center;
-}
-
-/* Contenedor interno opcional */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-nav{
-    background-color: #097aaa00;
+/* =========================================
+   NAV LINKS
+========================================= */
+nav {
+    background-color: transparent;
     padding: 1rem 2rem;
-   
-}
-.nav-container{
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-}
-/* Barra de navegación */
-.navbar {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 10%;
-    font-size: 19px;
-    background: #097aaa5a;  
-    color:#F5F9FC;
 }
 
-/* Lista de navegación */
-nav ul {
+nav ul,
+.links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-/* Links */
-nav a {
+nav a,
+.links a {
     text-decoration: none;
     color: white;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
 }
 
-/* Hover simple */
-nav a:hover {
-    text-decoration: underline;
-}
-/* Configuración del cuerpo */
-body {
-    font-family: 'coolvetica';
-    font-weight: normal;
-    letter-spacing: 0.7px; 
-    background-image: url("fondo_scishark.webp");
-    background-size: cover;   /* <-- Ajusta la imagen al tamaño de la pantalla */
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    color:#1a1a1a;
-    transition: background-color 0.4s, color 0.4s;
+nav a:hover,
+.links a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
-/* ===== HERO ===== */
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--color-accent);
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   MENÚ MÓVIL
+========================================= */
+.menubur {
+    display: none;
+    background: none;
+    border: none;
+    color: #f4f6f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================
+   HERO
+========================================= */
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -129,128 +189,409 @@ body {
     margin: 15px auto;
 }
 
-/* ===== BOTÓN LOGIN ===== */
-.btn-login {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: var(--color-primario);
-    color: #A2B5AF;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.btn-login:hover {
-    background-color: #003f5c;
-    transform: translateY(-5px);
-}
-
-/* ===== CARDS ===== */
-.info {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px 10%;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #3582c1c7;
-    padding: 25px;
-    border-radius: 10px;
-    width: 250px;
+.hero-text {
     text-align: center;
-    box-shadow: 0 6px 13px rgba(20, 20, 20, 0.5);
+    margin-bottom: 60px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   LAYOUTS
+========================================= */
+.layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+
+    max-width: 1400px;
+    margin: 20px auto;
+
+    padding: 0 30px;
+}
+
+.layout.info-variant {
+    grid-template-columns: 1fr 1.2fr;
+    max-width: 1300px;
+}
+
+.columna-izquierda,
+.info-derecha {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-derecha {
+    gap: 30px;
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+.card,
+.trabajo,
+.miembros-equipo,
+.card-mascota,
+.energia-item,
+.glass-panel {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
     transition: 0.3s;
 }
 
-.card:hover {
+.card:hover,
+.trabajo:hover,
+.miembros-equipo:hover,
+.card-mascota:hover,
+.energia-item:hover {
     transform: translateY(-10px);
 }
 
-/* ===== FORMULARIO ===== */
-.tenedor {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 25px;
-    border-radius: 20px;
+/* =========================================
+   BOTONES
+========================================= */
+button,
+.btn-submit,
+.btn-login {
+    border: none;
+    border-radius: 10px;
 
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    cursor: pointer;
 
     transition: 0.3s;
 }
 
-.tenedor:hover {
-    transform: translateY(-5px);
-}
-
-.tenedor input {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-}
-
-.tenedor button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
+.btn-submit,
+.tenedor button,
+.calculadora button {
     background: linear-gradient(135deg, #00D4FF, #0077B6);
     color: white;
-    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-submit:hover,
+.tenedor button:hover,
+.calculadora button:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   FORMULARIOS
+========================================= */
+input {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+}
+
+/* =========================================
+   CALCULADORA
+========================================= */
+.calculadora {
+    background: var(--color-terciario);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.calculadora input {
+    margin: 5px 0 15px;
+}
+
+/* =========================================
+   IMÁGENES
+========================================= */
+.imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+
+    max-width: 800px;
+    margin: 40px auto;
+
+    padding: 20px;
+
+    background: var(--color-secundario);
+
+    border-radius: 15px;
+}
+
+.imagenes img {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
     transition: 0.3s;
 }
 
-.tenedor button:hover {
-    transform: scale(1.05);
+.imagenes img:hover {
+    transform: scale(1.1);
 }
 
-/* ===== VIDEOS ===== */
-#videos {
-    padding: 50px 20px;
-    text-align: center;
-}
-
+/* =========================================
+   VIDEOS
+========================================= */
 .video-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
     gap: 25px;
+
     max-width: 1100px;
     margin: auto;
 }
 
 .video {
     background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 10px;
-    transition: 0.3s;
-}
 
-.video:hover {
-    transform: translateY(-8px);
+    backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+
+    padding: 10px;
 }
 
 .video iframe {
     width: 100%;
     height: 160px;
+
     border-radius: 10px;
 }
 
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+    text-align: center;
+
+    padding: 20px;
+
+    background-color: var(--color-primario);
+
+    color: white;
+
+    margin-top: 10px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 1000px) {
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .menubur {
+        display: block;
+    }
+
+    .links {
+        position: fixed;
+
+        top: 60px;
+        left: 0;
+
+        width: 100%;
+
+        background-color: #043673;
+
+        flex-direction: column;
+
+        clip-path: circle(0px at 90% -10%);
+        pointer-events: none;
+
+        transition: all 0.3s ease;
+    }
+
+    .links.active {
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .links li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.3s;
+    }
+
+    .links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .hero h1,
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .info,
+    .equipo-container,
+    .mascota-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ===== TARJETA PRINCIPAL ===== */
+.tarjeta-energia{
+    background: rgba(7, 32, 56, 0.72);
+    padding: 40px;
+    border-radius: 30px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: white;
+}
+
+/* ===== GRID ===== */
+.contenido-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:20px;
+}
+
+/* ===== BLOQUES ===== */
+.bloque{
+    background: rgba(0, 0, 0, 0.22);
+    padding:18px;
+    border-radius:15px;
+    color:white;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.bloque:hover{
+    transform:translateY(-5px);
+    background: rgba(0,0,0,0.32);
+}
+
+/* ===== BLOQUE GRANDE ===== */
+.bloque.full{
+    grid-column:span 2;
+}
+
+/* ===== TEXTOS ===== */
+.bloque h4{
+    margin-bottom:10px;
+    font-size:1.2rem;
+    color:white;
+}
+
+.bloque p,
+.bloque li{
+    color:rgba(255,255,255,0.95);
+    line-height:1.6;
+}
+
+/* Cards del equipo */
+
+.miembros-equipo{
+    width: 280px;
+    min-height: 500px;
+    background-color: var(--color-terciario);
+    padding: 25px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* Imagen del perfil */
+
+.miembros-equipo img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px auto;
+    border: 4px solid rgba(255,255,255,0.2);
+}
+
+
+/*                                                    MENU BURGUER KJSSSJKJKASKASASKJ                                                   */
+
+nav{
+    
+    padding: 1rem 2rem;
+   
+}
+.nav-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/*menu color*/
+.menubur{
+    color: var(--color-menu);
+   
+}
 .links{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+.links a{
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.links a:hover{
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+.menubur{
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media(max-width: 768px){
+    .menubur{
+        display: block;
+    }
+    .links{
         position: fixed;
         top: 60px;
         left: 0;
         width: 100%;
-        background-color: #043673;
+        background-color: var(--color-menu);
         flex-direction: column;
         clip-path: circle(0px at 90% -10%);
         pointer-events: none;
@@ -272,88 +613,439 @@ body {
      .links li:nth-child(2) {transition-delay: 0.2s;}
       .links li:nth-child(3) {transition-delay: 0.3s;}
        .links li:nth-child(4) {transition-delay: 0.4s;}
-
-
-/* ===== BOTÓN MENÚ (OCULTO POR DEFECTO) ===== */
-.menubur {
-    display: none;
-    background: none;
-    border: none;
-    color: #f4f6f5;
-    font-size: 1.5rem;
-    cursor: pointer;
 }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 20px;
+/* ===== DATOS RANDOM ===== */
 
-    background-color: var(--color-primario); /* ya corregido */
+.datos-random{
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+}
+
+.datos-random h2{
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#dato-energia-termica{
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.datos-random button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.explicacion{
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: var(--color-terciario);
+    color: white;
+    line-height: 1.8;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+}
+.explicacion h2{
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #7fdcff;
+}
+.explicacion p{
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* Funcionalidad modo oscuro CSS */
+#modo-check {
+    display: none;
+}
+
+/* Botón activador de modo oscuro */
+.btn-toggle {
+    display: block;
+    margin: 40px 0 10px 10%; 
+    padding: 10px 20px;
+    background-color: var(--color--oscuro);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.btn-toggle:hover {
+    background-color: var(--color-secundario);
+}
+
+/* Cambiar colores a modo oscuro */
+body:has(#modo-check:checked) {
+    background-color: #2f5e91;
+    background-image:url(fondo_scishark.webp);
     color: white;
 }
 
-/* ===== MENSAJES JS (para tu script) ===== */
-#mensajes {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
+/* Aplicar color negro al texto :v */
+body:has(#modo-check:checked) .hero h1,
+body:has(#modo-check:checked) .hero h2,
+body:has(#modo-check:checked) .hero p,
+body:has(#modo-check:checked) .card p,
+body:has(#modo-check:checked) .card h3,
+body:has(#modo-check:checked) .navbar,
+body:has(#modo-check:checked) .navbar nav a, 
+body:has(#modo-check:checked) .logo-text,   
+body:has(#modo-check:checked) .card,
+body:has(#modo-check:checked) .btn-login {
+    color: rgba(15, 4, 4, 0.874) !important; 
+}
+    
+
+body:has(#modo-check:checked) .card {
+    background: #1d466799;
 }
 
-/* ===== BARRA DE PROGRESO ===== */
-.barra-container {
+
+/* ===== HERO SECTION ===== */
+
+.hero{
     width: 100%;
-    height: 8px;
-    background: #ccc;
-    border-radius: 10px;
-    margin-top: 15px;
+    min-height: 85vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 8%;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(5, 15, 30, 0.95),
+        rgba(10, 35, 60, 0.90),
+        rgba(20, 70, 120, 0.85)
+    ),
+    url("termica1.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
     overflow: hidden;
 }
 
-.barra {
-    height: 100%;
-    width: 0%;
-    background: #00D4FF;
-    transition: width 0.3s;
-}
+/* ===== CONTENIDO ===== */
 
-/* ===== PREVIEW ARCHIVO ===== */
-.preview {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-}
-
-/* ===== LISTA DE TRABAJOS ===== */
-.lista-trabajos {
-    padding: 40px 20px;
+.hero-content{
+    max-width: 850px;
     text-align: center;
+    color: white;
+
+    animation: aparecer 1s ease;
 }
 
-.trabajo {
-    background: rgba(255,255,255,0.08);
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px auto;
-    max-width: 400px;
+.hero-content h1{
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    margin-bottom: 25px;
+
+    font-weight: 800;
+    line-height: 1.1;
+
+    text-shadow:
+    0 0 15px rgba(0,0,0,0.4);
+}
+
+.hero-content p{
+    font-size: 1.2rem;
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+
+    color: rgba(255,255,255,0.88);
+}
+
+/* ===== BOTÓN ===== */
+
+.hero-content a{
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    border-radius: 14px;
+
+    background: #4fc3f7;
+    color: #07111f;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+
+    transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-content a:hover{
+    transform: translateY(-5px);
+
+    background: #7fdcff;
+
+    box-shadow:
+    0 10px 25px rgba(79,195,247,0.4);
+}
+
+/* ===== EFECTO BRILLO ===== */
+
+.hero::before{
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+    radial-gradient(
+        rgba(79,195,247,0.25),
+        transparent 70%
+    );
+
+    top: -150px;
+    right: -120px;
+
+    pointer-events: none;
+}
+
+/* ===== ANIMACIÓN ===== */
+
+@keyframes aparecer{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width:768px){
 
-    .info {
-        flex-direction: column;
-        align-items: center;
+@media(max-width:768px){
+
+    .hero{
+        min-height: 70vh;
+        padding: 40px 6%;
     }
 
-    .links {
-        flex-direction: column;
-        align-items: center;
+    .hero-content h1{
+        font-size: 2.8rem;
     }
 
-    .menubur {
-        display: block;
+    .hero-content p{
+        font-size: 1rem;
     }
+
+    .hero-content a{
+        width: 100%;
+    }
+
+}
+/* celular */
+@media (max-width: 768px) {
+    body {
+        background-size: cover;   /* Mantiene la imagen adaptada */
+        background-attachment: scroll; /* Evita problemas en móviles con fixed */
+    }
+}
+
+/* Barra de navegación */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    font-size: 19px;
+    background: #097aaa5a;  
+    color: var(--color-texto);
+}
+
+
+.logo {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.3);
+}
+
+.logo-text {
+    font-weight:normal;
+    font-size:20px;
+    margin-left:10px;
+}
+
+.logo-container {
+    display:flex;
+    align-items:center;
+}
+
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a {
+    text-decoration:none;
+    color: var(--color-texto);
+}
+
+nav a:hover {
+    text-decoration:underline;
+}
+
+/* ===== PDF SECTION ===== */
+
+.pdf-section{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(10,20,35,0.95),
+        rgba(15,40,70,0.92)
+    );
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.3);
+
+    color: white;
+}
+
+.pdf-section h2{
+    font-size: 2rem;
+
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #7fdcff;
+}
+
+.pdf-container{
+    width: 100%;
+    height: 700px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border:
+    2px solid rgba(255,255,255,0.08);
+}
+
+.pdf-container iframe{
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: white;
+}
+
+/* ===== RECURSOS ===== */
+
+.recursos-container{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+/* ===== PDF EXTRA ===== */
+
+.pdf-viewer{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(10,20,35,0.95),
+        rgba(15,40,70,0.92)
+    );
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.25);
+}
+
+.pdf-viewer h3{
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #7fdcff;
+}
+
+.pdf-viewer iframe{
+    width: 100%;
+    height: 500px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: white;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+    .recursos-container{
+        grid-template-columns: 1fr;
+    }
+
+    .pdf-container{
+        height: 500px;
+    }
+
 }

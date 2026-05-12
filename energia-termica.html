@@ -1,181 +1,517 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <!-- Configuración básica de la página -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCI SHARK | Plataforma Estudiantil</title>
-
-    <!-- Librería de iconos (para los iconitos tipo rayo, fuego, etc.) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Tu archivo de estilos -->
-    <link rel="stylesheet" href="rootchidori.css">
-
-    <!-- Icono que aparece en la pestaña del navegador -->
-    <link rel="icon" type="image/webp" href="scishark.webp">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Página educativa sobre energía térmica, funcionamiento, aplicaciones y conceptos científicos básicos.">
+    <title>SCI SHARK | Energía Térmica</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    
+    <link rel="icon"
+          type="image/webp"
+          href="scishark.webp.webp">
 </head>
-
 <body>
 
-    <!-- Barra de navegación de arriba -->
-    <header class="navbar">
+<!--encabezadito :3-->
+<!--encabezadito :3-->
+   <header class="navbar">
         <figure class="logo-container">
+            <a href="index.html">
             <img src="scishark.webp.webp" alt="Logo" class="logo">
-            <figcaption class="logo-text">SCI SHARK</figcaption>
-        </figure>
+            <span class="logo-text">SCI SHARK</span>
+            </a>
 
-        <!-- Menú de navegación -->
-        <nav>
-            <ul class="links" id="links">
+        </figure>
+        <!-- menu hamburgusa -->
+         <nav aria-label="Menú principal">
+                <button class="menubur" id="mebur" aria-label="Abrir menú de navegación">☰</button>
+
+            <ul class="links" id="linkes">
                 <li><a href="practicas.html">Prácticas</a></li>
                 <li><a href="experimentos.html">Experimentos</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-                <li><a href="tipos-de-energia.html">Energías</a></li>
+                <li><a href="tipos de energia.html">Energías</a></li>    
+                 <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                 <li><a href="tus-trabajos.html">Tus trabajos</a></li>
             </ul>
         </nav>
-
+    
     </header>
 
-    <!-- Texto pequeño debajo del header -->
-    <p class="header-subtitle">Energía Térmica</p>
 
-    <!-- Contenido principal de la página -->
-    <main class="layout">
+<!-- ===== HERO ===== -->
 
-        <!-- Parte izquierda (calculadora) -->
-        <div class="columna-izquierda">
-            <h1 class="main-title">Energía Térmica</h1>
+<section class="hero">
 
-            <!-- Caja de la calculadora -->
-            <div class="calculadora">
-                <h2>Calculadora</h2>
+    <div class="hero-content">
 
-                <!-- Primera calculadora -->
-                <div class="calc-section">
-                    <h4>Punto de Ebullición (según presión)</h4>
+        <h1>
+            Explorando la Energía Térmica
+        </h1>
 
-                    <!-- Campo para escribir -->
-                    <input type="number" id="presion" placeholder="Presión (atm)">
+        <p>
+            Aprende cómo funciona el calor,
+            su impacto en la ciencia y
+            sus aplicaciones en la vida real.
+        </p>
 
-                    <!-- Botón que ejecuta la función en JS -->
-                    <button onclick="calcularEbullicion()">Calcular</button>
+        <a href="#contenido">
+            Explorar
+        </a>
 
-                    <!-- Aquí aparece el resultado -->
-                    <p id="resultadoEbullicion"></p>
+    </div>
 
-                    <!-- Explicación -->
-                    <p>
-                        Este cálculo muestra cómo cambia la temperatura de ebullición dependiendo de la presión.
-                    </p>
-                </div>
+</section>
 
-                <hr>
+<!-- ===== SUBTÍTULO ===== -->
 
-                <!-- Segunda calculadora -->
-                <div class="calc-section">
-                    <h4>Punto de Fusión</h4>
+<p class="header-subtitle">
+    Energía Térmica
+</p>
 
-                    <!-- Datos que el usuario debe ingresar -->
-                    <input type="number" id="kf" placeholder="Constante Kf">
-                    <input type="number" id="molalidad" placeholder="Molalidad">
-                    <input type="number" id="tempOriginal" placeholder="Punto de fusión puro (°C)">
+<!-- ===== INTRODUCCIÓN ===== -->
 
-                    <!-- Botón -->
-                    <button onclick="calcularFusion()">Calcular</button>
+<section class="explicacion">
 
-                    <!-- Resultado -->
-                    <p id="resultadoFusion"></p>
+    <h2>
+        Importancia de la Energía Térmica
+    </h2>
 
-                    <!-- Explicación -->
-                    <p>
-                        Esto sirve para ver cómo cambia el punto de fusión cuando se disuelve algo en una sustancia.
-                    </p>
-                </div>
+    <p>
+        La energía térmica es fundamental
+        en la vida diaria y en la industria moderna.
+        Se utiliza en sistemas de calefacción,
+        generación de electricidad, fabricación
+        de materiales y procesos científicos.
+    </p>
 
-            </div>
-        </div>
+    <p>
+        También participa en fenómenos naturales
+        como la evaporación del agua,
+        el clima y la actividad volcánica
+        del planeta.
+    </p>
 
-        <!-- Parte derecha (información) -->
-        <section class="info-derecha">
-            <article class="tarjeta-energia">
+    <p>
+        Gracias a la energía térmica es posible
+        producir vapor, mover turbinas,
+        cocinar alimentos y mantener condiciones
+        adecuadas en diferentes espacios.
+    </p>
 
-                <!-- Encabezado del contenido -->
-                <header class="encabezado">
-                    <h2 class="titulo">
-                        <i class="fa-solid fa-bolt"></i> Energía Térmica
-                    </h2>
-                    <p class="subtitulo">Conceptos clave y funcionamiento</p>
-                </header>
+</section>
 
-                <!-- Contenido en bloques -->
-                <div class="contenido-grid">
+<!-- ===== CONTENIDO PRINCIPAL ===== -->
 
-                    <!-- Qué es -->
-                    <article class="bloque">
-                        <h4><i class="fa-solid fa-fire"></i> ¿Qué es?</h4>
-                        <p>Es la energía que tienen las partículas cuando se mueven.</p>
-                        <p>Entre más rápido se mueven, más caliente está algo.</p>
-                    </article>
+<main class="layout" id="contenido">
 
-                    <!-- Cómo funciona -->
-                    <article class="bloque">
-                        <h4><i class="fa-solid fa-gears"></i> Funcionamiento</h4>
-                        <p>El calor puede convertir agua en vapor para generar energía.</p>
-                        <p>También puede venir del sol o de la Tierra.</p>
-                    </article>
+    <!-- ===== COLUMNA IZQUIERDA ===== -->
 
-                    <!-- Ventajas -->
-                    <article class="bloque ventaja">
-                        <h4><i class="fa-solid fa-circle-check"></i> Ventajas</h4>
-                        <ul>
-                            <li>Funciona todo el tiempo.</li>
-                            <li>Es eficiente.</li>
-                            <li>Ya se usa mucho.</li>
-                        </ul>
-                    </article>
+    <section class="columna-izquierda">
 
-                    <!-- Desventajas -->
-                    <article class="bloque desventaja">
-                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Desventajas</h4>
-                        <ul>
-                            <li>Contamina.</li>
-                            <li>Usa combustibles.</li>
-                        </ul>
-                    </article>
+        <h1 class="main-title">
+            Energía Térmica
+        </h1>
 
-                    <!-- Alternativas -->
-                    <article class="bloque alternativa">
-                        <h4><i class="fa-solid fa-leaf"></i> Alternativas</h4>
-                        <p>Se puede usar energía solar o geotérmica.</p>
-                    </article>
+        <section class="calculadora">
 
-                    <!-- Ejemplo -->
-                    <article class="bloque">
-                        <h4><i class="fa-solid fa-globe"></i> Ejemplo</h4>
-                        <p>Hervir agua en casa es un ejemplo claro.</p>
-                    </article>
+            <h2>
+                Calculadora
+            </h2>
 
-                    <!-- Conclusión -->
-                    <article class="bloque full">
-                        <h4><i class="fa-solid fa-lightbulb"></i> Conclusión</h4>
-                        <p>Es útil, pero hay que usarla con cuidado.</p>
-                    </article>
+            <!-- BLOQUE 1 -->
 
-                </div>
+            <article class="calc-section">
+
+                <h4>
+                    Punto de Ebullición
+                </h4>
+
+                <form>
+
+                    <label>
+                        Presión (atm)
+                    </label>
+
+                    <input type="number"
+                           name="presion">
+
+                    <button type="submit">
+                        Calcular
+                    </button>
+
+                </form>
+
+                <p>
+                    Resultado aparecería aquí.
+                </p>
+
+                <p>
+                    Este cálculo muestra cómo cambia
+                    la temperatura de ebullición
+                    dependiendo de la presión.
+                </p>
+
             </article>
+
+            <hr>
+
+            <!-- BLOQUE 2 -->
+
+            <article class="calc-section">
+
+                <h4>
+                    Punto de Fusión
+                </h4>
+
+                <form>
+
+                    <label>
+                        Constante Kf
+                    </label>
+
+                    <input type="number"
+                           name="kf">
+
+                    <label>
+                        Molalidad
+                    </label>
+
+                    <input type="number"
+                           name="molalidad">
+
+                    <label>
+                        Punto de fusión puro (°C)
+                    </label>
+
+                    <input type="number"
+                           name="tempOriginal">
+
+                    <button type="submit">
+                        Calcular
+                    </button>
+
+                </form>
+
+                <p>
+                    Resultado aparecería aquí.
+                </p>
+
+                <p>
+                    Esto sirve para ver cómo cambia
+                    el punto de fusión cuando se disuelve
+                    algo en una sustancia.
+                </p>
+
+            </article>
+
         </section>
 
-    </main>
+    </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <small>Proyecto científico escolar — Sci Shark 2026</small>
-    </footer>
+    <!-- ===== COLUMNA DERECHA ===== -->
 
-    <!-- Scripts (funciones y menú) -->
-    <script src="BURGER.js" defer></script>
-    <script src="energi.js" defer></script>
+    <section class="info-derecha">
+
+        <article class="tarjeta-energia">
+
+            <header class="encabezado">
+
+                <h2 class="titulo">
+
+                    <i class="fa-solid fa-fire"></i>
+
+                    Energía Térmica
+
+                </h2>
+
+                <p class="subtitulo">
+                    Conceptos clave y funcionamiento
+                </p>
+
+            </header>
+
+            <!-- ===== GRID ===== -->
+
+            <section class="contenido-grid">
+
+                <article class="bloque">
+
+                    <h4>
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        ¿Qué es?
+
+                    </h4>
+
+                    <p>
+                        Es la energía producida
+                        por el movimiento de las partículas.
+                    </p>
+
+                </article>
+
+                <article class="bloque">
+
+                    <h4>
+
+                        <i class="fa-solid fa-gears"></i>
+
+                        Funcionamiento
+
+                    </h4>
+
+                    <p>
+                        El calor puede transformar agua
+                        en vapor para generar energía.
+                    </p>
+
+                </article>
+
+                <article class="bloque ventaja">
+
+                    <h4>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Ventajas
+
+                    </h4>
+
+                    <ul>
+
+                        <li>Muy eficiente.</li>
+
+                        <li>Se usa en todo el mundo.</li>
+
+                        <li>Produce energía constante.</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="bloque desventaja">
+
+                    <h4>
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        Desventajas
+
+                    </h4>
+
+                    <ul>
+
+                        <li>Puede contaminar.</li>
+
+                        <li>Usa combustibles.</li>
+
+                    </ul>
+
+                </article>
+
+                <article class="bloque alternativa">
+
+                    <h4>
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                        Alternativas
+
+                    </h4>
+
+                    <p>
+                        Energía solar y geotérmica.
+                    </p>
+
+                </article>
+
+                <article class="bloque">
+
+                    <h4>
+
+                        <i class="fa-solid fa-globe"></i>
+
+                        Ejemplo
+
+                    </h4>
+
+                    <p>
+                        Hervir agua en casa.
+                    </p>
+
+                </article>
+
+                <article class="bloque full">
+
+                    <h4>
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        Conclusión
+
+                    </h4>
+
+                    <p>
+                        La energía térmica es útil,
+                        pero debe utilizarse
+                        responsablemente.
+                    </p>
+
+                </article>
+
+            </section>
+
+        </article>
+
+    </section>
+
+</main>
+
+<!-- ===== DATOS CURIOSOS ===== -->
+
+<section class="datos-random">
+
+    <h2>
+
+        <i class="fa-solid fa-fire-flame-curved"></i>
+
+        Datos sobre Energía Térmica
+
+    </h2>
+
+    <p id="dato-energia-termica">
+
+        Presiona el botón para ver un dato.
+
+    </p>
+
+    <button onclick="mostrarDatos()">
+
+        Mostrar dato
+
+    </button>
+
+</section>
+
+<!-- ===== PDF ===== -->
+
+<section class="pdf-section">
+
+    <h2>
+
+        <i class="fa-solid fa-file-pdf"></i>
+
+        PDF de Energía Térmica
+
+    </h2>
+
+    <div class="pdf-container">
+
+        <iframe
+            src="termodinamica-y-energia.pdf"
+            title="PDF Energía Térmica">
+        </iframe>
+
+    </div>
+
+</section>
+
+<!-- ===== RECURSOS ===== -->
+
+<section class="recursos-container">
+
+    <!-- ===== PDF EXTRA ===== -->
+
+    <div class="pdf-viewer">
+
+        <h3>
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            Material de Estudio
+
+        </h3>
+
+        <iframe
+            src="termodinamica-y-energia.pdf"
+            title="Documento Termodinámica"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <!-- ===== GALERÍA ===== -->
+
+    <div class="imagenes">
+
+        <h3>
+
+            <i class="fa-solid fa-images"></i>
+
+            Galería Científica
+
+        </h3>
+
+        <div class="gallery-grid">
+
+            <figure class="gallery-item">
+
+                <img
+                    src="termica1.webp"
+                    alt="Procesos térmicos"
+                    loading="lazy">
+
+                <figcaption>
+                    Procesos Térmicos Industriales
+                </figcaption>
+
+            </figure>
+
+            <figure class="gallery-item">
+
+                <img
+                    src="R.webp"
+                    alt="Energía geotérmica"
+                    loading="lazy">
+
+                <figcaption>
+                    Energía Geotérmica Natural
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    <small>
+        Proyecto científico escolar — Sci Shark 2026
+    </small>
+
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+
+<script src="BURGER.js" defer></script>
+
+<script src="energi.js" defer></script>
+
+<script src="ideas.js" defer></script>
 
 </body>
+
 </html>
