@@ -11,7 +11,7 @@
     /* PRINCIPALES */
     --color-primario: #4A90B8;
     --color-secundario: #2F5D7A;
-    --color-acento: #7BBCE0;
+    --color-acento: #4d94ba;
     --color-hover: #3B7CA5;
 
     /* FONDOS */
@@ -91,7 +91,7 @@ body {
     justify-content:space-between;
     align-items:center;
     padding:18px 10%;
-    background: rgb(148, 197, 229);
+    background:linear-gradient(135deg, #b8dfff,rgba(30, 106, 153, 0.88));
     color: var(--color-texto-claro);
     font-size: 19px;
     min-height: 80px;
@@ -223,7 +223,7 @@ nav{
         top: 78px;
         left: 0;
         width: 100%;
-        background-color: rgba(47, 93, 122, 0.95);
+         background:linear-gradient(135deg, #b8dfff,rgba(30, 106, 153, 0.88));
         flex-direction: column;
         align-items: flex-start;
         clip-path: circle(0px at 90% -10%);
@@ -249,23 +249,12 @@ nav{
         transform: translateY(0);
     }
 
-    .links li:nth-child(1){
-        transition-delay: 0.1s;
-    }
-
-    .links li:nth-child(2){
-        transition-delay: 0.2s;
-    }
-
-    .links li:nth-child(3){
-        transition-delay: 0.3s;
-    }
-
-    .links li:nth-child(4){
-        transition-delay: 0.4s;
-    }
+    .links li:nth-child(1) {transition-delay: 0.1s;}
+    .links li:nth-child(2) {transition-delay: 0.2s;}
+    .links li:nth-child(3) {transition-delay: 0.3s;}
+    .links li:nth-child(4) {transition-delay: 0.4s;}
+    .links li:nth-child(5) {transition-delay: 0.5s}
 }
-
 /* celular */
 @media (max-width: 768px) {
 
@@ -558,7 +547,8 @@ body:has(#modo-check:checked) {
 body:has(#modo-check:checked) .card,
 body:has(#modo-check:checked) .cardsinfo,
 body:has(#modo-check:checked) .energia,
-body:has(#modo-check:checked) .exptag {
+body:has(#modo-check:checked) .exptag,
+body:has(#modo-check:checked) .btn-login {
 
     background: rgba(18, 35, 50, 0.82);
     border: 1px solid rgba(255,255,255,0.08);
@@ -567,6 +557,12 @@ body:has(#modo-check:checked) .exptag {
 }
 
 body:has(#modo-check:checked) .navbar {
+    background: rgba(8, 15, 25, 0.92);
+}
+body:has(#modo-check:checked) .menubur {
+    background: rgba(8, 15, 25, 0.92);
+}
+body:has(#modo-check:checked) .links {
     background: rgba(8, 15, 25, 0.92);
 }
 
@@ -913,7 +909,7 @@ TIPOS DE ENERGIA
 /* Tarjeta de Información Detallada */
 .tarjeta-energia {
 
-    background: rgba(0, 43, 80, 0.6);
+    background: rgba(78, 144, 201, 0.6);
     padding: 45px;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.2);
@@ -1010,46 +1006,6 @@ TIPOS DE ENERGIA
     }
 }
 
-@media(max-width: 768px){
-
-    .menubur{
-        display: block;
-    }
-
-    .links{
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-acento);
-        flex-direction: column;
-        clip-path: circle(0px at 90% -10%);
-        pointer-events: none;
-        padding: 24px;
-        gap: 18px;
-    }
-
-    .links.active{
-        clip-path: circle(1000px at 90% -10%);
-        pointer-events: all;
-    }
-
-    .links li{
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-
-    .links.active li {
-        opacity: 1;
-        transform: translateY(0)
-    }
-
-    .links li:nth-child(1) {transition-delay: 0.1s;}
-    .links li:nth-child(2) {transition-delay: 0.2s;}
-    .links li:nth-child(3) {transition-delay: 0.3s;}
-    .links li:nth-child(4) {transition-delay: 0.4s;}
-}
 
 /* Bloques de contenido interno */
 .contenido-grid {
