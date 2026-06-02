@@ -15,46 +15,58 @@
     <!-- Control para el modo oscuro/claro -->
     <input type="checkbox" id="modo-check">
 
-    <!-- Encabezadito p -->
+       
+<!--encabezadito :3-->
     <header class="navbar">
-        <div class="top-bar">
-            <a href="index.html" aria-label="Ir al inicio">
-                <img src="scishark.webp.webp" 
-                     alt="Logo SCI SHARK: Tiburón científico" 
-                     class="logo" 
-                     width="80" 
-                     height="80">
-            </a>
-            
-            <!-- Navegación principal  -->
-            <nav class="nav-container" aria-label="Menú principal">
-                <button class="menubur" id="mebur" aria-label="Abrir menú">☰</button>
-                <ul class="links" id="linkes">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="practicas.html">Prácticas</a></li>
-                    <li><a href="experimentos.html" class="active">Experimentos</a></li>
-                    <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-                    <li><a href="tipos de energia.html">Energías</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Envolvemos el figure con el enlace -->
+    <a href="index.html" class="logo-link" title="Volver al inicio" style="text-decoration: none; color: inherit;">
+        <figure class="logo-container">
+            <img src="scishark.webp.webp" alt="Logo SCI SHARK" class="logo">
+            <figcaption class="logo-text">SCI SHARK</figcaption>
+        </figure>
+    </a>
+        <nav>
+            <div class="nav-container">
+                <button class="menubur" id="mebur">☰</button>
+                </button>
+
+            <ul class="links" id="linkes">
+                <li><a href="practicas.html">Prácticas</a></li>
+                <li><a href="experimentos.html">Experimentos</a></li>
+                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                <li><a href="tipos de energia.html">Energías</a></li>
+            </ul>
+        </nav>
+    </div>
+        <aside class="cuenta-container">
+            <a href="#" class="perfil-link"></a>
+        </aside>
+    </header>
 
         <!-- Título principal  -->
-        <div class="hero-content">
-            <h1><i class="fa-solid fa-flask-vial"></i> Laboratorio de Experimentos</h1>
-            <p>
-                Propuestas experimentales desarrolladas por estudiantes para estudiantes. 
+         <section class="info">
+            <main>
+                <section class="exptag">
+        <section class="h2">
+            <h2><i class="fa-solid fa-flask-vial"></i> Laboratorio de Experimentos</h2>
+            <p><br><br>
+                Bienvenido al Laboratorio de Experimentos, un espacio interactivo diseñado para despertar la curiosidad científica y guiar paso a paso en la realización de proyectos prácticos.<br> Aquí encontrarás una colección de tutoriales que combinan teoría y práctica, pensados para estudiantes, aficionados y apasionados de la ciencia.<br>Propuestas experimentales desarrolladas por estudiantes para estudiantes. 
                 Explora fenómenos químicos, físicos y biológicos con rigor científico y materiales accesibles.
-            </p>
-        </div>
-    </header>
+            </p> <br><br>
+        </section>
+        </section>
+            </main>
+        </section>
 
     <!-- Contenido principal de la página -->
     <main role="main">
-
+       
+        <section class="info">
+            <main>
+                <section class="exptag">
         <!-- Sección de búsqueda - etiquetas semánticas -->
         <section class="search" aria-labelledby="titulo-buscador">
-            <h2 id="titulo-buscador" class="visually-hidden">Buscador de proyectos científicos</h2>
+            <h3 id="titulo-buscador" class="visually-hidden">Buscador de proyectos científicos</h3>
             <div class="search-box">
                 <input type="text" id="buscador" placeholder="Buscar por materia o nombre...">
                 <button type="button" id="btnBuscar" aria-label="Buscar">
@@ -62,13 +74,11 @@
                 </button>
             </div>
         </section>
-
-        <!-- Sección Informativa  -->
-        <section class="intro-tecnica">
-            <h2>Metodología - SCI SHARK</h2>
-            <p>Explora los proyectos que tenemos,
-                 enfocándose en el aprendizaje basado en la indagación y la resolución de problemas mediante el método científico.</p>
+                </section>
+            </main>
         </section>
+
+        
 
         <!-- Experimentos  -->
         <section class="tarjeta-espacio" aria-label="Catálogo de experimentos disponibles">
@@ -80,7 +90,7 @@
                 </div>
                 <h3>Batería galvánica de monedas</h3>
                 <p>Análisis de celdas electroquímicas y reacciones redox. Aprende cómo la transferencia de electrones entre el cobre y el zinc genera energía eléctrica aprovechable.</p>
-                <a href="tutorial2.html" class="btn-primario">Ver tutorial completo</a>
+                <a href="tutorial2.html" class="btn-primario">Ver tutorial</a>
             </article>
 
             <!-- Experimento 2: Física -->
@@ -114,6 +124,19 @@
             </article>
 
         </section>
+
+        <!-- Sección Informativa  -->
+        <section class="exptag">
+            <main>
+                <section class="info">
+            <h3>Objetivo - SCI SHARK</h3>
+            <p>Explora los proyectos que tenemos,
+                 enfocándose en el aprendizaje basado en la indagación y la resolución de problemas mediante el método científico.</p>
+                 <br><br>
+                 <p> El objetivo principal de este laboratorio es fomentar la curiosidad científica y el aprendizaje práctico mediante la realización de experimentos accesibles, seguros y entretenidos. La página busca convertirse en un recurso educativo integral donde estudiantes, docentes y entusiastas de la ciencia puedan encontrar inspiración y guía para explorar fenómenos naturales y principios científicos de manera sencilla.</p>
+        </section>
+            </main>
+        </section>
     </main>
 
     <!-- Botón de modo oscuro - :3 accesibilidad de modo visual -->
@@ -121,12 +144,10 @@
         🌙 <span>Modo Oscuro</span>
     </label>
     
-    <!-- Pie de página con información real -->
-    <footer role="contentinfo">
-        <p>&copy; 2026 Proyecto Científico de Preparatoria | SCI SHARK</p>
-        <p><small>Desarrollado para la comunidad estudiantil de Zamora, Michoacán.</small></p>
-    </footer>
-
+    <!-- PIE DE PÁGINA -->
+<footer>
+    <p>Proyecto científico 2026 / SCI SHARK</p>
+</footer>
     <!-- EL MENÚ BURGER :V Lógica de búsqueda y menú responsive -->
     <script src="experimentosjava.js"></script>
     <script src="BURGER.js" defer></script>
