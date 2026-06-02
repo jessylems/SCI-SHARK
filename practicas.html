@@ -1,92 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCI SHARK - Zona de Prácticas</title>
-  <link rel="stylesheet" href="estilos2.css">
-  <meta name="description" content="Zona de prácticas estudiantiles con videos educativos de SCI SHARK.">
-  <!-- Icono -->
-    <link rel="icon" type="image/webp" href="scishark.webp">
+    <!-- Configuración básica - visualización en móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prácticas | SCI SHARK</title>
+   
+ 
+    <!--  Fuentes de iconos y hojas de estilo (OoO)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/webp" href="scishark.webp.webp">
 </head>
 <body>
-<!-- Barra de navegación de arriba -->
+    <!-- Control para el modo oscuro/claro -->
+    <input type="checkbox" id="modo-check">
+
+       
+<!--encabezadito :3-->
     <header class="navbar">
+    <!-- Envolvemos el figure con el enlace -->
+    <a href="index.html" class="logo-link" title="Volver al inicio" style="text-decoration: none; color: inherit;">
         <figure class="logo-container">
-            <img src="scishark.webp.webp" alt="Logo" class="logo">
+            <img src="scishark.webp.webp" alt="Logo SCI SHARK" class="logo">
             <figcaption class="logo-text">SCI SHARK</figcaption>
         </figure>
-        
-        <!-- Menú de navegación -->
+    </a>
         <nav>
-            <ul class="links" id="links">
+            <div class="nav-container">
+                <button class="menubur" id="mebur">☰</button>
+                </button>
+
+            <ul class="links" id="linkes">
                 <li><a href="practicas.html">Prácticas</a></li>
                 <li><a href="experimentos.html">Experimentos</a></li>
                 <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-                <li><a href="tipos-de-energia.html">Energías</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="tus-trabajos.html">Tus trabajos</a></li>
-      </ul>
-   </nav>
+                <li><a href="tipos de energia.html">Energías</a></li>
+            </ul>
+        </nav>
+    </div>
+        <aside class="cuenta-container">
+            <a href="#" class="perfil-link"></a>
+        </aside>
+    </header>
 
-   <h1>SCI SHARK - Zona de Prácticas</h1>
-   <p class="frase">
-     Todo es posible si te lo propones. Cree en ti mismo y nunca te rindas.  
-     Recuerda: el fracaso también es parte del aprendizaje.
-   </p>
-</header>
+
+
+<!-- ===== HERO ===== -->
+
+<section class="info">
+    <main>
+        <section class="exptag">
+            <section class="h2">
+                <h2><i class="fa-solid fa-clapperboard"></i></i> Tus prácticas científicas en un solo lugar</h2>
+                <p><br><br>
+                  Bienvenido al espacio de Prácticas Científicas, un entorno diseñado para fortalecer tu aprendizaje mediante actividades guiadas y estructuradas.
+                Aquí encontrarás propuestas que combinan teoría y aplicación, pensadas para estudiantes y entusiastas que buscan comprender la ciencia de manera clara y práctica.<br>
+                 <br>Descubre videos educativos que transforman la teoría en aprendizajes claros y accesibles, diseñados para despertar tu curiosidad y fortalecer tu conocimiento científico de manera práctica y entretenida.
+                </p> <br><br>
+            </section>
+        </section>
+    </main>
+</section>
 
 <main>
-  <section id="videos">
-    <h2>📺 Videos educativos</h2>
+  <section class="energia">
+    <h2> Vídeo educativos</h2><br>
     <div class="video-container">
       <div class="video">
         <iframe src="https://www.youtube.com/embed/iXUp__ySIgw" 
         title="10 asombrosos experimentos" allowfullscreen></iframe>
         <p>10 asombrosos experimentos</p>
+        <p>
+          en este video se presentan 10 experimentos increibles
+          y faciles de realizar en casa que demuestran principios cientificos de manera divertida y educativa.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/Nwe7M71Fqxo" 
         title="¿Qué es la ciencia?" allowfullscreen></iframe>
         <p>¿Qué es la ciencia?</p>
+        <p>
+          en este video se explica qué es la ciencia y cómo se diferencia de la pseudociencia.
+          de una manera de clara y divertida para todos los públicos, mostrando ejemplos de ambos
+          tipos de conocimiento.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/XUkmpMUci5o" 
         title="La mayor mentira de la ciencia moderna" allowfullscreen></iframe>
         <p>La mayor mentira de la ciencia moderna</p>
+        <p>
+          en este video se explora la importancia de distinguir entre la ciencia y la pseudociencia,
+          y cómo las creencias erróneas pueden propagarse fácilmente sin un fundamento científico sólido.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/HD0Hv9A3md4" 
         title="Te muestro cómo pienso la física" allowfullscreen></iframe>
         <p>Te muestro cómo pienso la física</p>
+        <p>
+          en este video se explica cómo se piensa en física y cómo se aplican los principios científicos
+          para entender el mundo que nos rodea.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/2D0c2wE2p0Y" 
         title="Los secretos del universo" allowfullscreen></iframe>
         <p>Los secretos del universo</p>
+        <p>
+          en este video se exploran algunos de los misterios más fascinantes del universo,
+          desde agujeros negros hasta la expansión del cosmos.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/0rHUDWjR5gg" 
         title="La teoría de la relatividad explicada" allowfullscreen></iframe>
         <p>La teoría de la relatividad explicada</p>
+        <p>
+          en este video se explica la teoría de la relatividad de Einstein y cómo cambia nuestra comprensión del tiempo y el espacio.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/1wZbqgRz2xY" 
         title="El poder de la biología" allowfullscreen></iframe>
         <p>El poder de la biología</p>
+        <p>
+          en este video se explora cómo la biología nos ayuda a entender la vida y los procesos naturales que nos rodean.
+        </p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/3JdWlSF195Y" 
         title="La química en tu vida diaria" allowfullscreen></iframe>
         <p>La química en tu vida diaria</p>
+        <p>
+          en este video se explica cómo la química influye en nuestra vida cotidiana y cómo se aplican los principios químicos en situaciones reales.
+        </p>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <p>© 2026 SCI SHARK - Página estudiantil</p>
+    <!-- PIE DE PÁGINA -->
+<footer>
+    <p>Proyecto científico 2026 / SCI SHARK</p>
 </footer>
+    <!-- EL MENÚ BURGER :V Lógica de búsqueda y menú responsive -->
+    <script src="experimentosjava.js"></script>
+    <script src="BURGER.js" defer></script>
+
 
 </body>
 </html>
