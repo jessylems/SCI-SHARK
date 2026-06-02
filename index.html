@@ -39,6 +39,12 @@
         </aside>
     </header>
 
+<div id="banner-kokkies" class="banner-kokkies">
+   <h3><i class="fa-solid fa-cookie-bite"></i>¿Hueles eso? ¡Galletitas! Aceptalas para endulzar tu navegación por nuestra página.</h3>
+    <button onclick="aceptarCookies()">Aceptar</button>
+    <button onclick="rechazarCookies()">Rechazar</button>
+</div>
+
     <main>
         <!--aqui se muestra la informacion en secciones hero-->
         <section class="hero">
@@ -52,7 +58,10 @@
                  <a href="iniciodesesion.html" class="btn-login">Iniciar sesión</a>
         </section>
 <!--aqui con clases se hizo tarjetas de informacion clara-->
-        <section class="info">
+
+</section>
+
+               <section class="info">
             <article class="card">
                 <h3><i class="fa-solid fa-flask"></i> Subir tus prácticas</h3>
                 <p>Comparte reportes, actividades y experimentos.
@@ -87,7 +96,6 @@
                 y mejorar la comunidad de ciencia escolar.
                 </p>
             </article>
-        </section>
             <!-- sobre la plataforma  -->
              <section class="energia">
                 <h2>¿Qué es SCI SHARK?</h2>
@@ -118,16 +126,42 @@
             habilidades científicas mediante contenido organizado,
             visual y práctico.</p>
         </section>
+<section class="galeria">
+    <h1>Galería de Proyectos</h1> 
 
-    </main>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img id="slide1" src="paneles.webp" alt="Paneles solares">
+            <img id="slide2" src="experimentos.webp" alt="Experimentos">
+            <img id="slide3" src="laboratorios.webp" alt="Laboratorios">
+            <img id="slide4" src="fae.webp" alt="Estudiantes">
+            <img id="slide5" src="imagen-1.webp" alt="Aula de ciencias">
+        </div>
 
+        <div class="slider-nav">
+            <a href="#slide1"></a>
+            <a href="#slide2"></a>
+            <a href="#slide3"></a>
+            <a href="#slide4"></a>
+            <a href="#slide5"></a>
+        </div>
+    </div>
+</section>
+   
    
   <input type="checkbox" id="modo-check" hidden>
 <label for="modo-check" class="btn-toggle">🌙 Cambiar modo</label>
+             </section>
+               </section>
 
-     <footer>
-        <small>Proyecto científico escolar — Sci Shark 2026</small>
-    </footer>
-   <script src="BURGER.js"></script>
-</body>
+             <!-- PIE DE PÁGINA -->
+<footer>
+    <p>Proyecto científico 2026 / SCI SHARK</p>
+</footer>
+    <!-- EL MENÚ BURGER :V Lógica de búsqueda y menú responsive -->
+    <script src="experimentosjava.js"></script>
+    <script src="BURGER.js" defer></script>
+    <script src="KOKIEE.js"></script>
+               
+</body>                   
 </html>
